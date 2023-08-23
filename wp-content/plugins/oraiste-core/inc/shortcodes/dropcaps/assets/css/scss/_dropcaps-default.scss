@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Dropcaps shortcode styles
+   ========================================================================== */
+
+.qodef-dropcaps {
+	@include qodefRelativeLayout();
+	
+	.qodef-m-letter {
+		position: relative;
+		top: 5px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		float: left;
+		margin: 0 10px 5px 0;
+		@include qodefHeadingStyle(h2);
+	}
+	
+	.qodef-m-text {
+		display: inline;
+		margin: 0;
+	}
+	
+	&:not(.qodef-type--simple) {
+		
+		.qodef-m-letter {
+			width: 40px;
+			height: 40px;
+			@include qodefH4Style();
+			color: var(--qode-background-color);
+			background-color: var(--qode-heading-color);
+		}
+	}
+	
+	&.qodef-type--circle {
+		
+		.qodef-m-letter {
+			border-radius: 100%;
+		}
+	}
+}

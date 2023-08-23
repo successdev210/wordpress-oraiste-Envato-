@@ -1,0 +1,160 @@
+.qodef-horizontal-portfolio-list {
+	height: 100%;
+	margin: 0 !important;
+	overflow: hidden;
+
+	@at-root .elementor-section-height-full & {
+		height: 100vh;
+	}
+
+	article {
+		@include qodefSkewAppearHidden(0s);
+
+		&.qodef--appear {
+			@include qodefSkewAppearVisible();
+		}
+	}
+
+	.qodef-e-media {
+		max-height: 470px;
+		overflow: hidden;
+
+		img {
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.qodef-m {
+
+		&-text {
+
+			@at-root .elementor-section-height-full & {
+				bottom: 66px;
+				left: 112px;
+				max-width: 100%;
+				position: absolute;
+				z-index: 1;
+			}
+
+			h1 {
+				font-size: calc(4px + 8vh);
+				line-height: 0.937em;
+				margin: 0;
+			}
+
+			.qodef-text-item {
+				display: inline-block;
+			}
+
+			.qodef--highlight {
+				position: relative;
+			}
+
+			svg {
+				@include qodefRippedLineSvg();
+			}
+		}
+
+		&-scroll-indicator {
+			$circle-size: 125px; //80
+
+			@include qodefAdditionalText();
+
+			height: $circle-size;
+			line-height: $circle-size;
+			text-align: center;
+			width: $circle-size;
+
+			@at-root .elementor-section-height-full & {
+				bottom: 45px;
+				right: 45px;
+				max-width: 100%;
+				position: absolute;
+				z-index: 1;
+			}
+
+			svg {
+				fill: none;
+				height: auto;
+				left: 0;
+				position: absolute;
+				stroke: var(--qode-button-circle-color);
+				stroke-width: 1;
+				top: 0;
+				width: $circle-size;
+			}
+		}
+
+		&-items-holder {
+			display: flex;
+			height: 100%;
+			overflow: hidden;
+			//padding: 98px 112px;
+			padding: 98px 0;
+			width: 100vw;
+
+			.scroll-content {
+				display: flex;
+				font-size: 0;
+				height: 100%;
+				padding: 0 112px;
+			}
+
+			.scrollbar-track {
+				display: none !important;
+			}
+		}
+	}
+
+	// grid override
+	.qodef-m-items-holder {
+		margin: 0 -#{$default-grid-gutter-size}px;
+
+		.qodef-grid-item {
+			padding: 0 #{$default-grid-gutter-size}px;
+			width: auto;
+
+			@media only screen and (min-width: 1025px) {
+				margin: 0 !important;
+
+				.qodef-e-inner {
+					width: 230px;
+				}
+			}
+
+			@media only screen and (min-width: 1367px) {
+				margin: 0 !important;
+
+				.qodef-e-inner {
+					width: 300px;
+				}
+			}
+		}
+	}
+
+	@for $i from 0 to length($grid-columns-gutter-label) {
+		&.qodef-gutter--#{nth($grid-columns-gutter-label,$i+1)} {
+			$gutter-size: nth($grid-columns-gutter-size, $i+1);
+			$gutter-double-size: $gutter-size * 2;
+
+			.qodef-m-items-holder { // qodef-grid-inner
+				@if ($gutter-size == 0) {
+					margin: 0;
+				} @else {
+					margin: 0 -#{$gutter-size}px;
+				}
+
+				.qodef-grid-item {
+					@if ($gutter-size == 0) {
+						padding: 0;
+						margin: 0;
+					} @else {
+						padding: 0 #{$gutter-size}px;
+						margin: 0 0 #{$gutter-double-size}px;
+					}
+				}
+			}
+		}
+	}
+}

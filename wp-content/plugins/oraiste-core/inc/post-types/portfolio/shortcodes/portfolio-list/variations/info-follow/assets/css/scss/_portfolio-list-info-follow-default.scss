@@ -1,0 +1,32 @@
+.qodef-portfolio-list {
+
+	&.qodef-item-layout--info-follow {
+
+		&.qodef-info-follow-predefined--on {
+
+			&.qodef-col-num--4 {
+
+				article {
+
+					&:nth-child(2n+1) {
+						top: 32px;
+					}
+				}
+			}
+
+			&.qodef-col-num--3 {
+
+				article {
+
+					&:nth-child(3n+1) {
+						top: 0;
+					}
+
+					&:nth-child(3n+2) {
+						top: 20px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Video Button shortcode start styles
+   ========================================================================== */
+
+.qodef-video-button {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr max-content 1fr;
+	grid-template-rows: 1fr min-content 1fr;
+
+	.qodef-m-image {
+		grid-column: 1/4;
+		grid-row: 1/4;
+	}
+	
+	.qodef-button {
+		grid-column: 2/3;
+		grid-row: 2/3;
+
+		body.qodef-color-skin--orange & {
+
+			.qodef-m-circle svg {
+				stroke: var(--qode-background-color);
+			}
+		}
+	}
+
+	.qodef-m-play {
+		@include qodefAbsoluteLayout();
+		z-index: 1;
+	}
+}
+/* ==========================================================================
+   Video Button shortcode end styles
+   ========================================================================== */

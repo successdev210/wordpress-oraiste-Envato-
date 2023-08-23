@@ -1,0 +1,6 @@
+@include qodefScreenSize1024 {
+
+	body:not(.qodef-content-behind-header) #qodef-page-outer {
+		margin-top: 0 !important; //overrides margin that header puts on content
+	}
+}

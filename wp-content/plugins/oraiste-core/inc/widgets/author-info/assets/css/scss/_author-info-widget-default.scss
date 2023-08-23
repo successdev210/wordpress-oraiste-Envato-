@@ -1,0 +1,54 @@
+.widget.qodef-author-info {
+
+	.qodef-author-info {
+
+		&-name {
+			margin: 0 0 14px 0;
+
+			a {
+				color: inherit;
+			}
+		}
+
+		&-image {
+			margin: 0 0 21px 0;
+			display: inline-block;
+		}
+
+		&-description {
+			margin: 0 0 24px 0;
+		}
+	}
+}
+
+/* ==========================================================================
+   Author Info variable style start
+   ========================================================================== */
+
+@import '../../../../../../../../themes/oraiste/assets/css/scss/widgets-map';
+
+.widget.qodef-author-info {
+
+	@each $key, $values in $wp-widgets-area-map {
+		$wp-widgets-map-merged: map-merge($wp-widgets-map, $values);
+
+		#{$key} & {
+
+			.qodef-author-info-name {
+
+				@if (map-get($wp-widgets-map-merged, 'widget-title-color') != null) {
+					color: map-get($wp-widgets-map-merged, 'widget-title-color') !important;
+				}
+
+				a {
+
+					@if (map-get($wp-widgets-map-merged, 'item-title-hover-color') != null) {
+						&:hover {
+							color: map-get($wp-widgets-map-merged, 'item-title-hover-color') !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,38 @@
+
+.qodef-interactive-portfolio-list {
+
+	&.qodef-item-layout--numbered-list {
+
+		@include qodefScreenSize768() {
+
+			.qodef-e {
+
+				&-number {
+					width: 38px;
+				}
+			}
+		}
+
+		@include qodefScreenSize480() {
+
+			.qodef-e {
+
+				&-content {
+					flex-wrap: wrap;
+				}
+
+				&-number {
+					display: none;
+				}
+
+				&-title {
+					width: 100%;
+				}
+
+				&-info-category {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

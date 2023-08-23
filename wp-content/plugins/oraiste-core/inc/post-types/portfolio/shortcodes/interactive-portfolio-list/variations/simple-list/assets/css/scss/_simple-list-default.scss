@@ -1,0 +1,138 @@
+/* ==========================================================================
+   Interactive Portfolio List shortcode variation styles
+   ========================================================================== */
+
+.qodef-interactive-portfolio-list {
+
+	&.qodef-item-layout--simple-list {
+
+		$image-height: 60vh;
+		$image-background-offset: 20px;
+
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-bottom: 45px; // to see active item in last row svg
+		padding-top: calc(#{$image-height} + 42px);
+		top: 33px; // compensate with bottom margin and line height
+
+		.qodef-e {
+			margin: 0 38px;
+			position: initial !important;
+			width: auto;
+
+			&:not(:last-child) {
+
+				.qodef-e-title {
+
+					&:after {
+						content: '/';
+						position: absolute;
+						right: -51px;
+						top: 0;
+					}
+				}
+			}
+
+			&-image {
+				height: $image-height;
+				left: 50%;
+				position: absolute;
+				top: 0;
+				transform: translateX(-50%);
+				width: auto;
+
+				.qodef-e-media-image,
+				a,
+				img {
+					display: block;
+					height: $image-height;
+					max-width: initial;
+					width: auto;
+				}
+
+				a {
+
+					&:after {
+						background-color: var(--qode-additional-background-color);
+						content: '';
+						display: block;
+						height: 100%;
+						left: $image-background-offset;
+						position: absolute;
+						top: -$image-background-offset;
+						width: 100%;
+						z-index: -1; // below image
+					}
+				}
+			}
+
+			&-media-image {
+				@include qodefSkewAppearHidden(0s, 60% 100%, -10px, 1.1);
+			}
+
+			&-content {
+				position: relative;
+			}
+
+			&-title {
+				margin: -2px 0 -2px 0;
+				white-space: nowrap;
+			}
+
+			&-link {
+				z-index: 1;
+			}
+
+			svg {
+				fill: none;
+				height: calc(100% + 20px);
+				left: -51px;
+				opacity: 0;
+				position: absolute;
+				stroke: var(--qode-main-color);
+				stroke-width: 3px;
+				top: -10px;
+				transition: $opacity-transition;
+				visibility: hidden;
+				width: calc(100% + 102px);
+
+				path {
+
+					&:first-child {
+						stroke-dasharray: 1740 1742;
+						stroke-dashoffset: 1741;
+					}
+
+					&:nth-child(2) {
+						stroke-dasharray: 1743 1745;
+						stroke-dashoffset: 1744;
+					}
+				}
+			}
+
+			&.qodef--active {
+
+				svg {
+					opacity: 1;
+					visibility: visible;
+				}
+
+				path {
+
+					&:first-child {
+						animation: qodef-border-line-draw 399ms ease-in-out 0ms forwards;
+					}
+
+					&:nth-child(2) {
+						animation: qodef-border-line-draw 400ms ease-in-out 399ms forwards;
+					}
+				}
+
+				.qodef-e-media-image {
+					@include qodefSkewAppearVisible();
+				}
+			}
+		}
+	}
+}

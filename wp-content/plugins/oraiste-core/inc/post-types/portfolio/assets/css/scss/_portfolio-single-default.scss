@@ -1,0 +1,136 @@
+/* ==========================================================================
+   Portfolio Single styles
+   ========================================================================== */
+
+.qodef-portfolio-single {
+	@include qodefRelativeLayout();
+
+	.qodef-media {
+
+		iframe {
+			max-height: calc(56.25vw);
+		}
+	}
+
+	.qodef-portfolio-title {
+		margin: 0 0 17px 0;
+	}
+
+	.qodef-portfolio-info {
+
+		> * {
+			align-items: flex-start;
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 17px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.qodef-e {
+
+			&-label {
+				@include qodefAdditionalText($size: large, $color: var(--qode-heading-color));
+			}
+
+			a,
+			p {
+				color: var(--qode-text-color);
+				line-height: 24px;
+				margin: 0;
+			}
+
+			a:hover {
+				color: var(--qode-main-color);
+			}
+
+			&-categories {
+				display: flex;
+			}
+
+			&-category {
+				@include qodefCategoryTagSeparator($color: var(--qode-text-color));
+			}
+		}
+
+		.qodef-info {
+
+			&--date {
+
+				p {
+					@include qodefAdditionalText($color: var(--qode-text-color));
+				}
+			}
+
+			&--social-share {
+
+				.qodef-social {
+
+					&-share {
+						flex-wrap: wrap;
+
+						ul {
+							flex-wrap: wrap;
+						}
+					}
+
+					&-title {
+						@include qodefAdditionalText($size: large, $color: var(--qode-heading-color));
+
+						margin-bottom: 2px;
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	.qodef-variations {
+
+		&--small {
+
+			.qodef-portfolio-title {
+				margin-top: -12px;
+			}
+
+			.qodef-grid > .qodef-grid-inner > .qodef-grid-item.qodef-portfolio-info {
+				margin-top: 28px;
+			}
+
+			.qodef-portfolio-info {
+				//margin-top: 28px; // not working
+			}
+		}
+
+		&--big {
+			margin-bottom: -26px;
+
+			.qodef-e {
+
+				&-content {
+					margin-top: 67px;
+				}
+			}
+
+			.qodef-portfolio-content {
+				margin-right: 126px;
+			}
+
+			.qodef-grid > .qodef-grid-inner > .qodef-grid-item.qodef-portfolio-info {
+				margin-top: 67px;
+			}
+
+			.qodef-portfolio-info {
+				display: flex;
+				flex-wrap: wrap;
+				//margin-top: 67px; // not working
+
+				> div {
+					flex: 0 50%;
+				}
+			}
+		}
+	}
+}

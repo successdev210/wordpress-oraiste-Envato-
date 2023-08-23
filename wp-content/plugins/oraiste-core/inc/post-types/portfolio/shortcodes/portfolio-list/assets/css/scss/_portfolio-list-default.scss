@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Portfolio List shortcode styles
+   ========================================================================== */
+$custom-horizontal-footer-height: 100px;
+$custom-horizontal-top-offset: 102px;
+$custom-horizontal-bottom-offset: 90px;
+
+.qodef-portfolio-list {
+
+	.qodef-e-inner {
+		position: relative;
+	}
+
+	.qodef-e-content {
+		backface-visibility: hidden;
+	}
+
+	.qodef-e-media {
+
+		img,
+		video {
+			display: block;
+			width: 100%;
+		}
+	}
+
+	.qodef-e-title {
+		margin: 0;
+	}
+
+	.qodef-e-info-category {
+		@include qodefAdditionalText();
+
+		a {
+
+			&:not(:last-child) {
+
+				&:after {
+					color: var(--qode-additional-text-color);
+					content: "/";
+					margin: 0 2px 0 3px;
+				}
+			}
+
+			&:hover {
+				color: var(--qode-main-color);
+			}
+		}
+	}
+
+	.qodef-m-pagination {
+		margin-top: 35px;
+	}
+
+	&.qodef-items--fixed {
+
+		.qodef-e-media {
+			//because of the custom padding around item
+			height: 100%;
+			overflow: hidden;
+		}
+
+		.qodef-e-media-image {
+			height: 100%;
+
+			a {
+				@include qodefRelativeLayout();
+
+				height: 100%;
+			}
+		}
+	}
+}
+
+body:not(.elementor-editor-active){
+	.qodef-portfolio-list {
+		&:not(.qodef-gutter--no) .qodef-e {
+			&.qodef--has-appear {
+				@include qodefSkewAppearHidden(0s);
+				//will-change: transform;
+
+				&.qodef--appear {
+					@include qodefSkewAppearVisible();
+				}
+			}
+		}
+
+		&.qodef-gutter--no .qodef-e {
+			&.qodef--has-appear {
+				.qodef-e-media {
+					opacity: 0;
+					transform: translateY(10%) translateZ(0) skewY(3deg) scaleY(1.3);
+					transform-origin: center center;
+					transition: transform .8s cubic-bezier(.16, .09, 0, 1.02) .1s, opacity .3s;
+					will-change: transform;
+				}
+
+				&.qodef--appear {
+					.qodef-e-media {
+						@include qodefSkewAppearVisible();
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,7 @@
+#qodef-page {
+    &.qodef-options-admin,
+    &.qodef-options-meta,
+    &.qodef-options-front-end {
+        @import "bootstrap/bootstrap-grid";
+    }
+}

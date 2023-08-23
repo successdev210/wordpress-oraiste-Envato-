@@ -1,0 +1,11 @@
+/* ==========================================================================
+   Mobile Header layout styles
+   ========================================================================== */
+
+.qodef-mobile-header--standard #qodef-page-mobile-header-inner {
+	justify-content: flex-end;
+	
+	.qodef-mobile-header-logo-link {
+		margin-right: auto;
+	}
+}

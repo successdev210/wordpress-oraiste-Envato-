@@ -1,0 +1,12 @@
+/* ==========================================================================
+   Standard Title layout styles
+   ========================================================================== */
+
+.qodef-page-title.qodef-title--standard-with-breadcrumbs {
+
+	.qodef-m-content {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+}

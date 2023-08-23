@@ -1,0 +1,483 @@
+#qodef-page {
+    &.qodef-options-admin,
+    &.qodef-options-meta,
+    &.qodef-options-front-end {
+        padding: 0 50px;
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .qode-show {
+            display: block;
+        }
+
+        .qodef-hide {
+            display: none;
+        }
+
+        /*  buttons - start */
+        .qodef-btn {
+            @include adminQodefButtonDefaultStyle();
+            @include adminQodefButtonSize();
+        }
+
+        .qodef-btn-solid {
+            @include adminQodefButtonFilledColor();
+
+            &:hover {
+                @include adminQodefButtonFilledHoverColor();
+            }
+        }
+
+        .qodef-btn-outlined {
+            @include adminQodefButtonOutlinedColor();
+
+            &:hover {
+                @include adminQodefButtonOutlinedHoverColor();
+            }
+        }
+        /*  buttons - end */
+
+        /*  headings - start */
+        p {
+            @include adminQodefParagraphStyle();
+        }
+
+        h1, .qodef-h1 {
+            @include adminQodefH1Style();
+        }
+
+        h2, .qodef-h2 {
+            @include adminQodefH2Style();
+        }
+
+        h3, .qodef-h3 {
+            @include adminQodefH3Style();
+        }
+
+        h4, .qodef-h4 {
+            @include adminQodefH4Style();
+        }
+
+        h5, .qodef-h5 {
+            @include adminQodefH5Style();
+        }
+
+        h6, .qodef-h6 {
+            @include adminQodefH6Style();
+        }
+        /*  headings - end */
+
+        .qodef-title {
+            margin: 0 0 11px;
+
+            + .qodef-row-wrapper {
+                margin-top: 16px;
+            }
+
+            + .qodef-section-wrapper,
+            + .qodef-repeater-wrapper {
+                margin-top: 10px;
+            }
+        }
+
+        .qodef-description {
+            margin: 0 0 11px;
+
+            + .qodef-row-wrapper {
+                margin-top: 40px;
+            }
+
+            + .qodef-section-wrapper,
+            + .qodef-repeater-wrapper {
+                margin-top: 10px;
+            }
+        }
+
+        .qodef-field-holder {
+
+            &:last-child {
+
+                .qodef-field-section {
+                    border-bottom: 0;
+                }
+            }
+            
+            &.qodef-hidden {
+                display: none;
+            }
+        }
+
+        /* Field in page or section directly */
+        .qodef-field-section {
+            display: flex;
+            align-items: flex-start;
+            padding: 40px 0 30px;
+            border-bottom: 1px solid $admin-border-color;
+            height: 100%;
+
+            .qodef-field-desc {
+                flex: 0 0 33%;
+                padding: 0 70px 0 0;
+                box-sizing: border-box;
+            }
+
+            .qodef-field-content {
+                flex: 0 0 67%;
+
+                .icons-selector {
+
+                    .fip-box,
+                    .selected-icon {
+
+                        i {
+
+                            &[data-fip-value^="lnr-"],
+                            &[class^="lnr-"] {
+                                font-family: 'Linearicons-Free';
+                                font-style: normal;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /* Field in row */
+        .qodef-row-wrapper {
+            margin-top: 30px;
+
+            .qodef-field-holder {
+                border-bottom: 0;
+            }
+
+            .qodef-field-section {
+                display: block;
+                border-bottom: 0;
+                padding: 26px 0;
+
+                .qodef-field-desc {
+                    padding: 0;
+                    margin: 0 0 15px;
+                }
+
+                .qodef-field-title {
+                    font-size: 16px;
+                }
+
+                .qodef-field-description {
+                    font-size: 13px;
+                    line-height: 21px;
+                }
+            }
+
+            .qodef-repeater-wrapper {
+                .qodef-repeater-wrapper-inner {
+                    padding: 30px 0;
+                }
+            }
+        }
+
+        /*  section - start  */
+        .qodef-section-wrapper {
+            margin-top: 35px;
+
+            .qodef-section-wrapper-inner {
+                padding: 30px;
+                box-sizing: border-box;
+                background: #f7f8f9;
+            }
+
+            .qodef-section-wrapper {
+                .qodef-section-wrapper-inner {
+                    padding: 45px;
+                    background-color: $admin-background-color;
+                }
+
+                &:last-child {
+                    .qodef-section-wrapper-inner {
+                        padding-bottom: 10px;
+                    }
+
+                    margin-bottom: 0;
+                }
+            }
+
+            .qodef-repeater-wrapper {
+                .qodef-repeater-wrapper-inner {
+                    padding: 30px 0;
+                }
+            }
+        }
+        /*  section - end  */
+
+        /*  tabs - start  */
+        &.qodef-tab-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            vertical-align: top;
+            visibility: hidden;
+            box-sizing: border-box;
+            border: none;
+            background: none;
+
+            &.qodef--init {
+                visibility: visible;
+            }
+
+            .qodef-tab-item-nav-wrapper {
+                position: relative;
+                display: flex;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                margin: 37px 0 -16px 0;
+                padding: 0;
+                list-style: none;
+                border: none;
+                background: none;
+
+                li {
+                    margin: 0 0 15px 0;
+                    padding: 0;
+                    border: none;
+                    background: none;
+
+                    &:last-child {
+                        a:after {
+                            display: none;
+                        }
+                    }
+
+                    a {
+                        display: block;
+                        position: relative;
+                        padding: 8px 21px;
+                        font-size: 12px;
+                        line-height: 1;
+                        font-family: $admin-heading-font;
+                        letter-spacing: 0.13em;
+                        text-transform: uppercase;
+                        color: $admin-text-color;
+                        text-decoration: none;
+                        transition: $admin-color-transition, $admin-border-color-transition;
+                        box-shadow: none;
+                        border-bottom: 1px solid $admin-tabs-color;
+
+                        &:after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            top: 8px; // match a top padding
+                            right: 0;
+                            width: 1px;
+                            height: 10px;
+                            background: $admin-tabs-color;
+                        }
+
+                        &:hover {
+                            color: $admin-heading-color;
+                            border-color: $admin-main-color;
+                        }
+                    }
+
+                    &.ui-state-active a,
+                    &.ui-state-hover a {
+                        color: $admin-heading-color;
+                        border-color: $admin-main-color;
+                        //background-color: $admin-main-color;
+                    }
+                }
+            }
+
+            .qodef-tab-item-content {
+                border: none;
+                background: none;
+
+                .qodef-tab-description {
+                    font-size: 17px;
+                    margin: 40px 0 0;
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid $admin-border-color;
+                }
+            }
+        }
+        /*  tabs - end */
+
+        /*  repeater - start */
+        .qodef-repeater-wrapper {
+
+            &.qodef-presentable {
+                .qodef-repeater-add {
+                    display: none;
+                }
+
+                .qodef-repeater-wrapper-main {
+                    .qodef-repeater-actions-holder {
+                        display: none;
+                    }
+                }
+            }
+
+            .qodef-placeholder {
+                border: 1px dashed $admin-border-color;
+                margin-bottom: 30px;
+            }
+
+            .qodef-repeater-wrapper-inner {
+                padding: 30px;
+                box-sizing: border-box;
+                background: #f7f8f9;
+            }
+
+            .qodef-repeater-wrapper-main {
+                margin-top: 10px;
+            }
+
+            .qodef-repeater-fields-holder {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: $admin-background-color;
+                margin-bottom: 30px;
+                padding: 0 40px 0 25px;
+
+                .qodef-repeater-fields {
+                    display: inline-flex;
+                    flex-wrap: wrap;
+                    width: 100%;
+    
+                    .qodef-field-holder:not(col-lg-12) {
+                        
+                        .qodef-field-section {
+                            align-items: center;
+                        }
+                    }
+                }
+
+                .qodef-repeater-actions-holder {
+                    flex: 0 0 130px;
+                    text-align: center;
+                }
+
+                .qodef-repeater-sort,
+                .qodef-repeater-remove {
+                    width: 47px;
+                    height: 47px;
+                    line-height: 47px;
+                    margin: 0 0 0 auto;
+                    border-radius: 47px;
+                    text-align: center;
+
+                    a {
+                        display: inline-block;
+                        width: 100%;
+                        height: 100%;
+                        vertical-align: middle;
+                    }
+
+                    svg {
+                        display: inline-block;
+                        width: 16px;
+                        height: auto;
+                        fill: currentColor;
+                    }
+                }
+
+                .qodef-repeater-sort {
+                    border: 1px solid $admin-border-color;
+                    background: $admin-background-color;
+                    color: $admin-text-color;
+                    margin-bottom: 10px;
+                    cursor: grab;
+                }
+
+                .qodef-repeater-remove {
+                    background: $admin-main-color;
+                    transition: $admin-background-color-transition;
+
+                    a {
+                        cursor: pointer;
+                        color: #fff;
+                        box-shadow: none;
+                        text-decoration: none;
+                    }
+
+                    &:hover {
+                        background: $admin-hover-color2;
+                    }
+                }
+            }
+
+            .qodef-repeater-add {
+                margin-top: 10px;
+                display: inline-block;
+            }
+
+            /* repeater inner styles */
+            .qodef-repeater-inner-wrapper-inner {
+                padding: 30px;
+                box-sizing: border-box;
+            }
+
+            .qodef-repeater-inner-wrapper-main {
+                margin-top: 30px;
+            }
+
+            .qodef-repeater-inner-fields-holder {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 30px;
+                padding: 0 40px 0 25px;
+                background: #f7f8f9;
+
+                .qodef-repeater-inner-fields {
+                    display: inline-block;
+                    width: 100%;
+                }
+
+                .qodef-repeater-inner-add {
+                    margin-top: 10px;
+                    display: inline-block;
+                }
+            }
+            
+            &.qodef-repeater-columns-layout {
+                
+                .qodef-repeater-actions-holder {
+                    flex: 0 0 70px;
+                }
+                
+                .qodef-field-section {
+                    flex-wrap: wrap;
+                    
+                    > * {
+                        width: 100%;
+                        flex: auto;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+        /*  repeater - end */
+
+        @import 'fields/general';
+        @import 'fields/general-responsive';
+        @import 'fields/address';
+        @import 'fields/colorpicker';
+        @import 'fields/checkbox-and-radio';
+        @import 'fields/image-file-upload';
+        @import 'fields/image-file-upload-responsive';
+        @import 'fields/radio-group';
+        @import 'fields/yes-no';
+    }
+}
+
+.postbox-container{
+    #listing-reviews-criteriadiv,
+    #listing-amenitydiv{
+        display: none;
+    }
+}

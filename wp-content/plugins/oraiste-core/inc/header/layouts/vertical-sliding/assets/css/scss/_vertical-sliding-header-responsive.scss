@@ -1,0 +1,74 @@
+/* ==========================================================================
+   Vertical Sliding layout responsive styles
+   ========================================================================== */
+
+@include qodefScreenSize1366() {
+
+	$vertical-sliding-header-width--initial: 53px;
+	$vertical-sliding-header-width--open: 575px;
+	$vertical-sliding-header-padding--initial: 23px; // vertical
+	$vertical-sliding-header-padding--open: 47px; // horizontal
+
+	.qodef-header--vertical-sliding {
+
+		#qodef-page-header {
+			width: $vertical-sliding-header-width--initial;
+
+			.qodef--static {
+				width: $vertical-sliding-header-width--initial;
+
+				.qodef-header-logo-link {
+					height: $vertical-sliding-header-width--initial;
+					top: calc(#{$vertical-sliding-header-padding--initial} + 10px);
+					width: $vertical-sliding-header-width--initial;
+				}
+
+				.qodef-widget-holder {
+					bottom: $vertical-sliding-header-padding--initial;
+					height: $vertical-sliding-header-width--initial;
+					width: $vertical-sliding-header-width--initial;
+				}
+			}
+
+			.qodef--dynamic {
+				left: -#{ $vertical-sliding-header-width--initial + $vertical-sliding-header-width--open};
+				padding: 38px $vertical-sliding-header-padding--open 15px #{$vertical-sliding-header-width--initial + $vertical-sliding-header-padding--open};
+				width: $vertical-sliding-header-width--open;
+
+				.qodef-widget-holder {
+					//left: #{$vertical-sliding-header-width--initial + $vertical-sliding-header-padding--open};
+					left: auto;
+					right: $vertical-sliding-header-padding--open;
+
+					&.qodef--two {
+						top: $vertical-sliding-header-padding--initial;
+					}
+
+					&.qodef--three {
+						bottom: $vertical-sliding-header-padding--initial;
+					}
+				}
+			}
+		}
+
+		#qodef-page-outer,
+		#qodef-page-footer {
+			padding-left: $vertical-sliding-header-width--initial;
+		}
+	}
+}
+
+@include qodefScreenSize1024() {
+
+	.qodef-header--vertical-sliding {
+
+		#qodef-page-header-inner {
+			display: none;
+		}
+
+		#qodef-page-outer,
+		footer {
+			padding-left: 0;
+		}
+	}
+}

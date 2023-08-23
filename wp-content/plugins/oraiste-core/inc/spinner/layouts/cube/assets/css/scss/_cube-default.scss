@@ -1,0 +1,17 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+	
+	&.qodef-layout--cube {
+		
+		.qodef-m-cube {
+			width: 60px;
+			height: 60px;
+			margin: -30px 0 0 -30px;
+			background-color: currentColor;
+			animation: qode-cube 1.2s infinite ease-in-out;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+/* ==========================================================================
+   #Footer styles - start
+   ========================================================================== */
+
+.qodef-page-footer--uncover {
+	
+	#qodef-page-outer {
+		z-index: 90; // needs to be larger than the footer and lower than the header
+	}
+	
+	#qodef-page-footer {
+		
+		.no-touchevents & {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+		}
+	}
+}
+
+/* ==========================================================================
+   #Footer styles - end
+   ========================================================================== */

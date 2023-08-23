@@ -1,0 +1,87 @@
+/* ==========================================================================
+   #Parallax Background styles - start
+   ========================================================================== */
+
+.qodef-parallax {
+	/* set height for parallax item px, vh, % etc. */
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+
+	&.elementor-section {
+		overflow: visible;
+	}
+
+	&-row-holder {
+		height: 100%;
+		left: 0;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		width: 100%;
+
+		@at-root .qodef-parallax-mobile--hide & {
+
+			@include qodefScreenSize1024() {
+				display: none;
+			}
+		}
+	}
+
+	&-img-holder {
+		/* set values:
+			top = -x%,
+			height = (100 + x)%
+		*/
+		height: 150%;
+		left: 0;
+		opacity: 0;
+		position: absolute;
+		top: -50%;
+		width: 100%;
+
+		.touchevents &,
+		.qodef-browser--edge &,
+		.qodef-browser--ms-explorer & {
+			height: 100%;
+			opacity: 1;
+			top: 0;
+		}
+	}
+
+	&-content-holder {
+		position: relative;
+		z-index: 99;
+	}
+
+	&-img {
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+
+		.touchevents & {
+			height: 100%;
+			object-fit: cover;
+			width: 100%;
+		}
+
+		.qodef-browser--edge &,
+		.qodef-browser--ms-explorer & {
+			height: 100%;
+		}
+
+		&-wrapper {
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			will-change: transform;
+		}
+	}
+}
+
+/* ==========================================================================
+   #Parallax Background styles - end
+   ========================================================================== */

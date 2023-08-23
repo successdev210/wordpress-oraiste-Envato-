@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Twitter List widget styles
+   ========================================================================== */
+$wp-widgets-area-map: (
+	'#qodef-page-sidebar': (),
+	'#qodef-page-footer': (
+		link-color: var(--qode-text-color),
+		link-hover-color:var(--qode-main-color),
+	),
+);
+.qodef-twitter-list {
+	@each $key, $values in $wp-widgets-area-map {
+
+		#{$key} .widget & {
+
+			&.qodef-layout--columns {
+
+				#ctf {
+
+					a {
+						color: map-get($values, 'link-color');
+
+						&:hover {
+							color: map-get($values, 'link-hover-color');
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Twitter List widget styles
+   ========================================================================== */

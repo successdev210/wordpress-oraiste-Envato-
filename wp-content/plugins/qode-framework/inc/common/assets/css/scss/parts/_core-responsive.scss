@@ -1,0 +1,201 @@
+#qodef-page {
+    &.qodef-options-admin,
+    &.qodef-options-meta,
+    &.qodef-options-front-end {
+        
+        @media only screen and (max-width: 1024px) {
+            padding: 0 15px;
+    
+            .qodef-title {
+        
+                + .qodef-row-wrapper {
+                    margin-top: 15px;
+                }
+            }
+    
+            .qodef-description {
+        
+                + .qodef-row-wrapper {
+                    margin-top: 15px;
+                }
+            }
+    
+            /* Field in page or section directly */
+            .qodef-field-section {
+                display: block;
+                padding: 35px 0 15px;
+    
+                .qodef-field-desc {
+                    padding-right: 0;
+                }
+            }
+    
+            /* Field in row */
+            .qodef-row-wrapper {
+                margin-bottom: 15px;
+    
+                .qodef-repeater-wrapper {
+                    .qodef-repeater-wrapper-inner {
+                        padding: 15px 0;
+                    }
+                }
+            }
+    
+            /*  section - start  */
+            .qodef-section-wrapper {
+                margin-top: 15px;
+        
+                .qodef-section-wrapper-inner {
+                    padding: 15px;
+                }
+        
+                .qodef-section-wrapper {
+                    .qodef-section-wrapper-inner {
+                        padding: 15px;
+                    }
+                    &:last-child {
+                        .qodef-section-wrapper-inner {
+                            padding-bottom: 10px;
+                        }
+                    }
+                }
+        
+                .qodef-repeater-wrapper {
+                    .qodef-repeater-wrapper-inner {
+                        padding: 15px 0;
+                    }
+                }
+            }
+            /* section - end */
+    
+            /* repeater - start */
+            .qodef-repeater-wrapper {
+        
+                .qodef-placeholder {
+                    margin-bottom: 15px;
+                }
+        
+                .qodef-repeater-wrapper-inner {
+                    padding: 15px;
+                }
+        
+                .qodef-repeater-wrapper-main {
+                    margin-top: 15px;
+                }
+        
+                .qodef-repeater-fields-holder {
+                    margin-bottom: 15px;
+            
+                    .qodef-repeater-actions-holder {
+                        flex: 0 0 100px;
+                    }
+                }
+        
+                /* repeater inner styles */
+                .qodef-repeater-inner-wrapper-inner {
+                    padding: 15px;
+                }
+        
+                .qodef-repeater-inner-wrapper-main {
+                    margin-top: 15px;
+                }
+        
+                .qodef-repeater-inner-fields-holder {
+                    margin-bottom: 15px;
+                }
+            }
+            /*  repeater - end */
+            
+            /* tabs - start */
+            &.qodef-tab-wrapper {
+                .qodef-tab-item-content {
+        
+                    .qodef-tab-description {
+                        margin: 15px 0 0;
+                        padding-bottom: 15px;
+                    }
+                }
+            }
+            /* tabs - end */
+        }
+    
+        @media only screen and (max-width: 680px) {
+    
+            .qodef-btn {
+                padding: 12px 25px;
+            }
+            
+            h2 {
+                font-size: 17px;
+                line-height: 1.2em;
+            }
+            
+            h3 {
+                font-size: 14px;
+                line-height: 1.2em;
+            }
+            
+            p {
+                font-size: 13px;
+                line-height: 21px;
+            }
+    
+            .qodef-title {
+                margin: 0 0 6px;
+            }
+    
+            .qodef-description {
+                margin: 0 0 6px;
+            }
+    
+            .qodef-row-wrapper {
+    
+                .qodef-field-section {
+                    padding: 15px 0;
+    
+                    .qodef-field-desc {
+                        margin: 0 0 11px;
+                    }
+                    
+                    .qodef-field-title {
+                        font-size: 14px;
+                    }
+    
+                    .qodef-field-description {
+                        font-size: 11px;
+                        line-height: 18px;
+                    }
+                }
+            }
+    
+            /* repeater - start */
+            .qodef-repeater-wrapper {
+                
+                .qodef-repeater-fields-holder {
+                    padding: 0 15px 0 5px;
+    
+                    .qodef-repeater-actions-holder {
+                        flex: 0 0 35px;
+                    }
+    
+                    .qodef-repeater-sort,
+                    .qodef-repeater-remove {
+                        width: 25px;
+                        height: 25px;
+                        line-height: 25px;
+                        
+                        svg {
+                            width: 9px;
+                        }
+                    }
+                }
+    
+                /* repeater inner styles */
+                .qodef-repeater-inner-fields-holder {
+                    padding: 0 15px 0 5px;
+                }
+            }
+            /* repeater - end */
+        }
+    }
+}

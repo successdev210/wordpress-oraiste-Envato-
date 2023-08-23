@@ -1,0 +1,7 @@
+.qodef-portfolio-list {
+    &.qodef-hover-animation--tilt {
+        .qodef-e-media-image {
+            transform-style: preserve-3d;
+        }
+    }
+}

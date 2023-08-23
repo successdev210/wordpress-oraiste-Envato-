@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+	
+	&.qodef-layout--fusion {
+		
+		.qodef-m-fusion {
+			position: relative;
+			width: 30px;
+			height: 30px;
+			margin: -45px 0 0 -30px;
+		}
+		
+		.qodef-m-fusion-item {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			height: 40px;
+			width: 40px;
+			background: currentColor;
+			border-radius: 50%;
+			
+			&.qodef-fusion--1 {
+				top: 0;
+				left: 50%;
+				animation: qode-fussion-ball-1 1s 0s ease infinite;
+				z-index: 1;
+			}
+			
+			&.qodef-fusion--2 {
+				top: 50%;
+				left: 100%;
+				animation: qode-fussion-ball-2 1s 0s ease infinite;
+				z-index: 2;
+			}
+			
+			&.qodef-fusion--3 {
+				top: 100%;
+				left: 50%;
+				animation: qode-fussion-ball-3 1s 0s ease infinite;
+				z-index: 1;
+			}
+			
+			&.qodef-fusion--4 {
+				top: 50%;
+				left: 0;
+				animation: qode-fussion-ball-4 1s 0s ease infinite;
+				z-index: 2;
+			}
+		}
+	}
+}

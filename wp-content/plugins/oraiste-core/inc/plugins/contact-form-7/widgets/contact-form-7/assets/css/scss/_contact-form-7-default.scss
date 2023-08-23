@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Contact Form 7 widget styles
+   ========================================================================== */
+
+.qodef-contact-form-7 {
+	@include qodefRelativeLayout();
+
+	.wpcf7 {
+
+		&-not-valid-tip,
+		&-response-output {
+			font-size: 13px; // match form label font size
+			font-weight: 300;
+		}
+
+		&-not-valid-tip {
+			color: var(--qode-main-color) !important;
+		}
+
+		&-response-output {
+			border-color: var(--qode-border-color);
+			border-width: 1px !important;
+			margin: 2em 0 0 0 !important;
+		}
+
+		.ajax-loader {
+			animation: qode-rotate 2s linear infinite;
+			background: none !important;
+			border: 1px solid var(--qode-additional-border-color) !important;
+			border-radius: 50%;
+			border-top: 1px solid var(--qode-main-color) !important;
+			height: 23px !important;
+			margin: 0 0 0 12px !important;
+			position: absolute;
+			right: 0;
+			width: 23px !important;
+
+			&:before {
+				display: none !important;
+			}
+		}
+
+		&-form {
+
+			&.sent {
+
+				.wpcf7-response-output {
+					border-color: var(--qode-additional-border-color) !important;
+				}
+			}
+
+			&.failed,
+			&.aborted,
+			&.spam,
+			&.invalid,
+			&.unaccepted {
+
+				.wpcf7-response-output {
+					border-color: var(--qode-main-color) !important;
+				}
+			}
+		}
+	}
+
+	.use-floating-validation-tip {
+
+		.wpcf7-not-valid-tip {
+			background: var(--qode-background-color);
+			border: 1px solid var(--qode-main-color);
+		}
+	}
+
+	// theme specific form
+
+	&--two-columns {
+
+		div {
+			position: relative;
+		}
+
+		.wpcf7-text {
+
+			@at-root .wpcf7-form.invalid & {
+
+				margin: 0 0 12px;
+			}
+		}
+
+		.qodef-button {
+
+			@at-root .wpcf7-form.invalid & {
+
+				margin-top: 32px;
+			}
+		}
+
+		.ajax-loader {
+
+			@at-root .wpcf7-form.invalid & {
+
+				top: 32px;
+			}
+		}
+	}
+}

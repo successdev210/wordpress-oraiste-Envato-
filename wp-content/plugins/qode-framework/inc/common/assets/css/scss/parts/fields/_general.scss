@@ -1,0 +1,114 @@
+/*  fields general style - start  */
+.qodef-input,
+select,
+textarea {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	vertical-align: top;
+	margin: 0;
+	padding: #{($admin-input-fields-height - $admin-input-fields-text-line-height) / 2}px #{$admin-input-fields-side-padding}px;
+	font-family: $admin-heading-font;
+	font-size: #{$admin-input-fields-text-size}px;
+	line-height: #{$admin-input-fields-text-line-height}px;
+	font-weight: inherit;
+	color: $admin-input-fields-text-color;
+	background-color: $admin-input-fields-background-color;
+	border: 1px solid $admin-input-fields-border-color;
+	border-radius: 30px;
+	outline: 0;
+	cursor: pointer;
+	transition: $admin-color-transition, $admin-background-color-transition, $admin-border-color-transition;
+	box-shadow: none;
+	max-width: #{$admin-input-fields-width}px;
+	
+	&:focus {
+		color: $admin-input-fields-focus-text-color;
+		background-color: $admin-input-fields-focus-background-color;
+		border-color: #c1c1c5;
+	}
+	
+	&:not(.qodef-datepicker) {
+		
+		&:read-only {
+			background-color: #eee;
+			cursor: not-allowed;
+		}
+	}
+	
+	@include adminQodefPlaceholder {
+		color: inherit;
+	}
+}
+
+.qodef-input {
+	-webkit-appearance: none;
+}
+
+select {
+	height: #{$admin-input-fields-height}px;
+}
+
+textarea {
+	padding-top: #{$admin-input-fields-side-padding}px;
+	padding-bottom: #{$admin-input-fields-side-padding}px;
+	line-height: 1.6em;
+	max-width: 100%;
+}
+
+.qodef-inline {
+	display: inline-block;
+	padding-right: 15px;
+	margin-bottom: 0;
+	vertical-align: middle;
+	font-weight: normal;
+	cursor: pointer;
+	
+	&.qodef-hide {
+		display: none;
+	}
+}
+
+.input-group {
+	max-width: #{$admin-input-fields-width}px;
+	display: flex;
+	align-items: center;
+	
+	.qodef-input {
+		width: auto;
+		border-radius: 30px 0 0 30px;
+	}
+	
+	.input-group-addon {
+		border: 1px solid $admin-input-fields-border-color;
+		width: 90px;
+		padding: #{($admin-input-fields-height - $admin-input-fields-text-line-height) / 2}px 5px;
+		font-family: $admin-heading-font;
+		font-size: #{$admin-input-fields-text-size}px;
+		line-height: #{$admin-input-fields-text-line-height}px;
+		background-color: $admin-input-fields-background-color;
+		text-align: center;
+		color: $admin-input-fields-focus-text-color;
+		
+		&.input-prefix {
+			border-radius: 30px 0 0 30px;
+			margin-right: -1px;
+			
+			~ .qodef-input {
+				border-radius: 0 30px 30px 0;
+			}
+		}
+		
+		&.input-suffix {
+			border-radius: 0 30px 30px 0;
+			margin-left: -1px;
+		}
+	}
+}
+
+.qodef-map-canvas {
+	height: 300px;
+	margin: 20px 0;
+}
+
+/*  fields general style - end  */

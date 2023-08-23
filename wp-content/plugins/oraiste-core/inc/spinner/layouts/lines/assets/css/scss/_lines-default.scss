@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+
+	&.qodef-layout--lines {
+
+		.qodef-m-lines {
+			height: 60px;
+			margin: 0 0 0 -30px;
+			width: 60px;
+		}
+
+		.qodef-m-line {
+
+			@for $i from 1 through 4 {
+
+				&.qodef-line--#{$i} {
+					position: absolute;
+					width: 60px;
+					height: 4px;
+					margin-left: 10px;
+					background-color: currentColor;
+					animation: qode-lines-spin 1.5s infinite ease calc((#{$i* 100ms}) - 100ms);
+				}
+			}
+		}
+	}
+}

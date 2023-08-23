@@ -1,0 +1,9 @@
+.qodef-address-field-holder {
+
+    .qodef-reset-marker {
+        display: inline-block;
+        height: #{$admin-input-fields-height}px;
+        line-height: #{$admin-input-fields-height}px;
+        margin: 0 0 0 15px;
+    }
+}

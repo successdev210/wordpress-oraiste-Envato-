@@ -1,0 +1,29 @@
+
+.qodef-interactive-portfolio-list {
+
+	.qodef-e {
+
+		&-media-image {
+			visibility: hidden;
+		}
+
+		&-link {
+			display: block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+
+		&.qodef--active {
+
+			.qodef-e {
+
+				&-media-image {
+					visibility: visible;
+				}
+			}
+		}
+	}
+}

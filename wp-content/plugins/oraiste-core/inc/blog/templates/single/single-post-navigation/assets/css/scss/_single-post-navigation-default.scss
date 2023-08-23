@@ -1,0 +1,85 @@
+/* ==========================================================================
+   Single Post Navigation styles
+   ========================================================================== */
+
+#qodef-single-post-navigation {
+	$distance: 25px;
+
+	@include qodefRelativeLayout();
+
+	margin: 60px 0 0 0;
+
+	.qodef-m {
+
+		&-inner {
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+			position: relative;
+		}
+
+		&-nav {
+			align-items: center;
+			display: flex;
+			max-width: 100%;
+			position: relative;
+
+			&-content {
+				display: flex;
+				flex-direction: column;
+			}
+
+			&-label {
+				@include qodefAdditionalText($font-weight: $button-font-weight);
+			}
+
+			&-icon {
+				fill: none;
+				margin-top: 4px;
+				stroke: currentColor;
+				transition: stroke $transition-timing;
+				width: 19px;
+			}
+
+			&-image {
+				width: 105px; // must be an odd value
+			}
+
+			&.qodef--prev {
+				flex-direction: row-reverse;
+
+				.qodef-m-nav {
+
+					&-content {
+						align-items: flex-start;
+					}
+
+					&-image {
+						margin-right: $distance;
+					}
+				}
+			}
+
+			&.qodef--next {
+
+				.qodef-m-nav {
+
+					&-content {
+						align-items: flex-end;
+					}
+
+					&-image {
+						margin-left: $distance;
+					}
+				}
+			}
+
+			&:hover {
+
+				.qodef-m-nav-icon {
+					stroke: var(--qode-main-color);
+				}
+			}
+		}
+	}
+}

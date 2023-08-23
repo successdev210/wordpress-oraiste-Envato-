@@ -1,0 +1,22 @@
+.qodef-checkbox-group-holder,
+.qodef-radio-group-holder:not(.qodef-with-images) {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	
+	.qodef-inline {
+		position: relative;
+		flex: 0 0 25%;
+		margin-bottom: 20px;
+		
+		@media only screen and (max-width: 768px) {
+			flex: 0 0 100%;
+		}
+	}
+	
+	@extend %admin-checkbox-style;
+	
+	label {
+		pointer-events: initial !important; /* overwrite default value for label */
+	}
+}

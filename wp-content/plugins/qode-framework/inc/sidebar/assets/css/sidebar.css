@@ -1,0 +1,66 @@
+.qodef-custom-sidebar {
+	position: relative;
+	display: none;
+	vertical-align: top;
+	width: 100%;
+	padding: 15px;
+	margin: 10px 0 0;
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	visibility: hidden;
+	box-sizing: border-box;
+}
+
+.qodef-custom-sidebar.qodef--init {
+	display: inline-block;
+	visibility: visible;
+}
+
+.sidebar-qodef-custom-sidebar {
+	position: relative;
+}
+
+.qodef-custom-sidebar-remove {
+	position: absolute;
+	top: 12px;
+	right: 42px;
+	height: 24px;
+	width: 24px;
+	background: transparent url(../img/remove.png) no-repeat top left;
+	cursor: pointer;
+	z-index: 100;
+}
+
+.qodef-custom-sidebar-remove:hover {
+	background-position: bottom left;
+}
+
+.qodef-custom-sidebar .qodef-custom-sidebar-title {
+	margin: 0;
+}
+
+.qodef-custom-sidebar .qodef-custom-sidebar-description {
+	margin: 10px 0 0;
+	font-size: 13px;
+	color: #72777c;
+}
+
+.qodef-custom-sidebar .qodef-custom-sidebar-inputs {
+	margin-top: 20px;
+}
+
+.qodef-custom-sidebar .qodef-custom-sidebar-name {
+	min-width: 33%;
+	padding: 5px 15px;
+	margin: 0 8px 0 0;
+}
+
+.qodef-custom-sidebar .qodef-custom-sidebar-button {
+	height: 40px;
+	padding: 0 20px 1px;
+}
+
+.qodef-custom-sidebar .qodef-custom-sidebar-response {
+	color: #d54e21;
+}

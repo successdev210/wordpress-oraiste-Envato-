@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+	
+	&.qodef-layout--atom {
+		
+		.qodef-m-atom {
+			position: relative;
+			width: 100px;
+			height: 100px;
+			margin: -50px 0 0 -50px;
+		}
+		
+		.qodef-m-atom-item {
+			
+			&.qodef-atom--1 {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				height: 50%;
+				width: 50%;
+				z-index: 1;
+				animation: qode-atom-shrink 4.5s infinite linear;
+				
+				&:before {
+					content: '';
+					position: absolute;
+					top: -50%;
+					left: -50%;
+					height: 100%;
+					width: 100%;
+					background: currentColor;
+					border-radius: 50%;
+				}
+			}
+			
+			&.qodef-atom--2,
+			&.qodef-atom--3,
+			&.qodef-atom--4 {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				z-index: 0;
+				
+				&:before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 20px;
+					width: 20px;
+					margin: 0 auto;
+					background: currentColor;
+					border-radius: 50%;
+				}
+			}
+			
+			&.qodef-atom--2 {
+				animation: qode-atom-zindex 1.5s 0.75s infinite steps(2, end);
+				
+				&:before {
+					transform: rotate(0);
+					animation: qode-atom-postion 1.5s infinite ease, qode-atom-size 1.5s -1.125s infinite ease;
+				}
+			}
+			
+			&.qodef-atom--3 {
+				transform: rotate(120deg);
+				animation: qode-atom-zindex 1.5s -0.25s infinite steps(2, end);
+				
+				&:before {
+					animation: qode-atom-postion 1.5s -1s infinite ease, qode-atom-size 1.5s -0.75s infinite ease;
+				}
+			}
+			
+			&.qodef-atom--4 {
+				transform: rotate(240deg);
+				animation: qode-atom-zindex 1.5s 0.25s infinite steps(2, end);
+				
+				&:before {
+					animation: qode-atom-postion 1.5s -0.5s infinite ease, qode-atom-size 1.5s -0.125s infinite ease;
+				}
+			}
+		}
+	}
+}

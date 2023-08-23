@@ -1,0 +1,104 @@
+
+.qodef-horizontal-portfolio-list {
+
+	@include qodefScreenSize1600() {
+
+		.qodef-m {
+
+			&-text {
+
+				@at-root .elementor-section-height-full & {
+					bottom: 35px;
+				}
+			}
+
+			&-scroll-indicator {
+
+				@at-root .elementor-section-height-full & {
+					bottom: 15px;
+				}
+			}
+
+			&-items-holder {
+				padding: 68px 0;
+			}
+		}
+	}
+
+	@include qodefScreenSize1366() {
+
+		.qodef-m {
+
+			&-scroll-indicator {
+
+				@at-root .elementor-section-height-full & {
+					right: 30px;
+				}
+			}
+
+			&-items-holder {
+				padding: 44px 0;
+			}
+		}
+	}
+
+	@include qodefScreenSize1024() {
+		height: auto !important;
+
+		.qodef-e-media {
+			max-height: initial;
+		}
+
+		.qodef-m {
+
+			&-text {
+				bottom: initial !important;
+				left: initial !important;
+				padding: 40px;
+				position: initial !important;
+				width: auto;
+
+				@at-root .qodef-text-break--disabled#{&} {
+
+					br {
+						display: none;
+					}
+				}
+			}
+
+			&-scroll-indicator {
+				display: none;
+			}
+
+			&-items-holder {
+				flex-wrap: wrap;
+				height: auto;
+				overflow: visible !important;
+				overflow-y: scroll !important;
+				padding: 40px;
+				width: auto;
+
+				.qodef-grid-item {
+					width: 50% !important;
+
+					.qodef-e-inner {
+						width: initial !important;
+					}
+				}
+			}
+		}
+	}
+
+	@include qodefScreenSize680() {
+
+		.qodef-m {
+
+			&-items-holder {
+
+				.qodef-grid-item {
+					width: unset !important;
+				}
+			}
+		}
+	}
+}

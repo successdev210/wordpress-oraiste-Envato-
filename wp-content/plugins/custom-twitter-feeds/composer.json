@@ -1,0 +1,8 @@
+{
+    "name": "smashballoon/custom-twitter-feeds",
+    "autoload": {
+        "psr-4": {
+            "TwitterFeed\\": "inc/"
+        }
+    }
+}

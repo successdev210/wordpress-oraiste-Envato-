@@ -1,0 +1,322 @@
+# Copyright (C) 2021 Qode Interactive
+# This file is distributed under the same license as the Qode Framework plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Qode Framework 1.1.5\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/qode-framework\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-09-10T13:10:44+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.3.0\n"
+"X-Domain: qode-framework\n"
+
+#. Plugin Name of the plugin
+msgid "Qode Framework"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://qodeinteractive.com"
+msgstr ""
+
+#. Description of the plugin
+msgid "Framework plugin developed as a base for Qode Interactive themes"
+msgstr ""
+
+#. Author of the plugin
+msgid "Qode Interactive"
+msgstr ""
+
+#: helpers/helper.php:1055
+#: helpers/helper.php:1121
+#: helpers/helper.php:1151
+#: helpers/helper.php:1187
+#: helpers/helper.php:1215
+#: inc/common/core/class-qodeframeworkoptions.php:144
+#: inc/fonts/helper.php:111
+#: inc/sidebar/class-qodeframeworkcustomsidebar.php:171
+msgid "Default"
+msgstr ""
+
+#: helpers/helper.php:1306
+msgid "Person"
+msgstr ""
+
+#: helpers/helper.php:1306
+msgid "People"
+msgstr ""
+
+#: inc/common/core/class-qodeframeworkfieldrepeater.php:23
+msgid "+ Add New Item"
+msgstr ""
+
+#: inc/common/core/class-qodeframeworkfieldrepeaterinner.php:23
+msgid "Add New Item"
+msgstr ""
+
+#: inc/common/core/class-qodeframeworkoptions.php:142
+msgid "Clear"
+msgstr ""
+
+#: inc/common/core/class-qodeframeworkoptions.php:143
+msgid "Clear color"
+msgstr ""
+
+#: inc/common/core/class-qodeframeworkoptions.php:145
+msgid "Select default color"
+msgstr ""
+
+#: inc/common/core/class-qodeframeworkoptions.php:146
+msgid "Select Color"
+msgstr ""
+
+#: inc/common/core/class-qodeframeworkoptions.php:147
+msgid "Color value"
+msgstr ""
+
+#: inc/common/fields-nav-menu/class-qodeframeworkfieldnavmenuiconpack.php:18
+#: inc/common/fields/class-qodeframeworkfieldiconpack.php:20
+#: inc/icons/class-qodeframeworkicons.php:38
+msgid "Select Icon Pack"
+msgstr ""
+
+#: inc/common/fields-wp/class-qodeframeworkfieldwpfile.php:15
+#: inc/common/fields/class-qodeframeworkfieldfile.php:13
+msgid "File Thumbnail"
+msgstr ""
+
+#: inc/common/fields-wp/class-qodeframeworkfieldwpfile.php:22
+#: inc/common/fields/class-qodeframeworkfieldfile.php:20
+msgid "Select File"
+msgstr ""
+
+#: inc/common/fields-wp/class-qodeframeworkfieldwpfile.php:22
+#: inc/common/fields-wp/class-qodeframeworkfieldwpimage.php:35
+#: inc/common/fields/class-qodeframeworkfieldfile.php:20
+#: inc/common/fields/class-qodeframeworkfieldimage.php:34
+#: inc/widgets/fields/class-qodeframeworkfieldwidgetimage.php:19
+msgid "Upload"
+msgstr ""
+
+#: inc/common/fields-wp/class-qodeframeworkfieldwpfile.php:23
+#: inc/common/fields-wp/class-qodeframeworkfieldwpimage.php:36
+#: inc/common/fields/class-qodeframeworkfieldfile.php:21
+#: inc/common/fields/class-qodeframeworkfieldimage.php:35
+#: inc/widgets/fields/class-qodeframeworkfieldwidgetimage.php:20
+msgid "Remove"
+msgstr ""
+
+#: inc/common/fields-wp/class-qodeframeworkfieldwpimage.php:16
+#: inc/common/fields-wp/class-qodeframeworkfieldwpimage.php:26
+#: inc/common/fields/class-qodeframeworkfieldimage.php:16
+#: inc/common/fields/class-qodeframeworkfieldimage.php:26
+#: inc/widgets/fields/class-qodeframeworkfieldwidgetimage.php:13
+msgid "Image Thumbnail"
+msgstr ""
+
+#: inc/common/fields-wp/class-qodeframeworkfieldwpimage.php:35
+#: inc/common/fields/class-qodeframeworkfieldimage.php:34
+#: inc/widgets/fields/class-qodeframeworkfieldwidgetimage.php:19
+msgid "Select Image"
+msgstr ""
+
+#: inc/common/fields-wp/class-qodeframeworkfieldwpyesno.php:9
+#: inc/common/fields/class-qodeframeworkfieldyesno.php:8
+#: inc/shortcodes/translators/elementor/class-qodeframeworkelementor-translator.php:465
+msgid "Yes"
+msgstr ""
+
+#: inc/common/fields-wp/class-qodeframeworkfieldwpyesno.php:13
+#: inc/common/fields/class-qodeframeworkfieldyesno.php:10
+#: inc/shortcodes/translators/elementor/class-qodeframeworkelementor-translator.php:464
+msgid "No"
+msgstr ""
+
+#: inc/common/fields/class-qodeframeworkfieldaddress.php:22
+msgid "In order for the map functionality to be enabled please input the Google Map API key in the General section of the Masterds Options"
+msgstr ""
+
+#: inc/common/fields/class-qodeframeworkfieldaddress.php:24
+msgid "Reset Marker"
+msgstr ""
+
+#: inc/common/modules/admin/core/class-qodeframeworkoptionsadmin.php:16
+msgid "Qode Options"
+msgstr ""
+
+#: inc/common/modules/admin/core/class-qodeframeworkoptionsadmin.php:153
+msgid "Saved"
+msgstr ""
+
+#: inc/common/modules/admin/core/class-qodeframeworkoptionsadmin.php:158
+#: inc/common/modules/admin/core/class-qodeframeworkoptionsadmin.php:185
+msgid "Wrong options trigger"
+msgstr ""
+
+#: inc/common/modules/admin/core/class-qodeframeworkoptionsadmin.php:180
+msgid "Options reset to default"
+msgstr ""
+
+#: inc/common/modules/admin/templates/holder.php:8
+msgid "Admin Qode Interactive image"
+msgstr ""
+
+#: inc/common/modules/admin/templates/holder.php:13
+msgid "Help Center Icon image"
+msgstr ""
+
+#: inc/common/modules/admin/templates/holder.php:14
+msgid "Support Center"
+msgstr ""
+
+#: inc/common/modules/admin/templates/holder.php:19
+msgid "Search Options"
+msgstr ""
+
+#: inc/common/modules/admin/templates/holder.php:27
+msgid "Successfully saved!"
+msgstr ""
+
+#: inc/common/modules/admin/templates/holder.php:31
+msgid "Save Changes"
+msgstr ""
+
+#: inc/common/modules/admin/templates/holder.php:34
+msgid "Are you sure? You will reset all options to default values. This will also apply on already imported demo."
+msgstr ""
+
+#: inc/common/modules/admin/templates/holder.php:34
+msgid "Reset All"
+msgstr ""
+
+#: inc/common/modules/nav-menu/core/class-qodeframeworkpagenavmenu.php:37
+msgid "Icon"
+msgstr ""
+
+#: inc/media/class-qodeframeworkimagesizes.php:65
+msgid "Large size"
+msgstr ""
+
+#: inc/media/class-qodeframeworkimagesizes.php:67
+msgid "Max Width"
+msgstr ""
+
+#: inc/media/class-qodeframeworkimagesizes.php:70
+msgid "Max Height"
+msgstr ""
+
+#: inc/media/class-qodeframeworkimagesizes.php:74
+msgid "Crop to exact dimensions (normally are proportional) "
+msgstr ""
+
+#: inc/post-types/class-qodeframeworkcustomposttype.php:239
+#: inc/post-types/class-qodeframeworkcustomposttypetaxonomy.php:108
+msgid "base"
+msgstr ""
+
+#: inc/post-types/class-qodeframeworkcustomposttypetaxonomy.php:72
+#: inc/post-types/class-qodeframeworkcustomposttypetaxonomy.php:82
+msgid "%1$s %2$s"
+msgstr ""
+
+#: inc/post-types/class-qodeframeworkcustomposttypetaxonomy.php:73
+msgid "Search %1$s %2$s"
+msgstr ""
+
+#: inc/post-types/class-qodeframeworkcustomposttypetaxonomy.php:74
+msgid "All %1$s %2$s"
+msgstr ""
+
+#: inc/post-types/class-qodeframeworkcustomposttypetaxonomy.php:75
+msgid "Parent %1$s %2$s"
+msgstr ""
+
+#: inc/post-types/class-qodeframeworkcustomposttypetaxonomy.php:76
+msgid "Parent %1$s %2$s:"
+msgstr ""
+
+#: inc/post-types/class-qodeframeworkcustomposttypetaxonomy.php:77
+msgid "Edit %1$s %2$s"
+msgstr ""
+
+#: inc/post-types/class-qodeframeworkcustomposttypetaxonomy.php:78
+msgid "Update %1$s %2$s"
+msgstr ""
+
+#: inc/post-types/class-qodeframeworkcustomposttypetaxonomy.php:79
+msgid "Add New %1$s %2$s"
+msgstr ""
+
+#: inc/post-types/class-qodeframeworkcustomposttypetaxonomy.php:80
+msgid "New %1$s %2$s Name"
+msgstr ""
+
+#: inc/post-types/class-qodeframeworkcustomposttypetaxonomy.php:81
+msgid "No %1$s %2$s Found"
+msgstr ""
+
+#: inc/shortcodes/translators/elementor/class-qodeframeworkelementor-translator.php:52
+msgid "Content"
+msgstr ""
+
+#: inc/shortcodes/translators/elementor/class-qodeframeworkelementor-translator.php:132
+msgid "Item"
+msgstr ""
+
+#: inc/shortcodes/translators/elementor/class-qodeframeworkelementor-translator.php:252
+msgid "Qode"
+msgstr ""
+
+#: inc/shortcodes/translators/elementor/class-qodeframeworkelementor-translator.php:452
+msgid "Developer Tools"
+msgstr ""
+
+#: inc/shortcodes/translators/elementor/class-qodeframeworkelementor-translator.php:460
+msgid "Show Shortcode Snippet"
+msgstr ""
+
+#: inc/sidebar/class-qodeframeworkcustomsidebar.php:12
+msgid "Custom Sidebar"
+msgstr ""
+
+#: inc/sidebar/class-qodeframeworkcustomsidebar.php:40
+msgid "This area allows you to add Custom widget area on your site"
+msgstr ""
+
+#: inc/sidebar/class-qodeframeworkcustomsidebar.php:42
+msgid "Custom Sidebar Name"
+msgstr ""
+
+#: inc/sidebar/class-qodeframeworkcustomsidebar.php:43
+msgid "Add Sidebar"
+msgstr ""
+
+#: inc/sidebar/class-qodeframeworkcustomsidebar.php:90
+msgid "Custom sidebar is added"
+msgstr ""
+
+#: inc/sidebar/class-qodeframeworkcustomsidebar.php:92
+#: inc/sidebar/class-qodeframeworkcustomsidebar.php:119
+msgid "Nonce is invalid"
+msgstr ""
+
+#: inc/sidebar/class-qodeframeworkcustomsidebar.php:95
+#: inc/sidebar/class-qodeframeworkcustomsidebar.php:122
+msgid "POST is invalid"
+msgstr ""
+
+#: inc/sidebar/class-qodeframeworkcustomsidebar.php:114
+msgid "Custom sidebar is deleted"
+msgstr ""
+
+#: inc/sidebar/class-qodeframeworkcustomsidebar.php:116
+msgid "Custom sidebar name is invalid"
+msgstr ""
+
+#: inc/widgets/class-qodeframeworkwidget.php:228
+msgid "There are no options for this widget."
+msgstr ""

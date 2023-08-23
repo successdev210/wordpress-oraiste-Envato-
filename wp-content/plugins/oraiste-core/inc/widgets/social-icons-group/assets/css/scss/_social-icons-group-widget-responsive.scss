@@ -1,0 +1,9 @@
+@include qodefScreenSize1024 {
+
+    .qodef-social-icons-group {
+
+        #qodef-page-sidebar & {
+            justify-content: flex-start;
+        }
+    }
+}

@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Portfolio Project Info shortcode responsive style - begin
+   ========================================================================== */
+
+.qodef-portfolio-project-info {
+
+	@include qodefScreenSize1024 {
+
+		.qodef-portfolio-info {
+			margin-top: 60px;
+		}
+
+		&.qodef-project-info-layout--narrow {
+
+			.qodef-e-excerpt {
+				margin: 0 0 0 0;
+			}
+		}
+
+		&.qodef-project-info-layout--wide {
+
+			.qodef-e-excerpt {
+				margin: 0 0 0 0;
+			}
+		}
+	}
+
+	@include qodefScreenSize680 {
+
+		&.qodef-project-info-layout--wide {
+
+			.qodef-portfolio-info {
+		
+				.qodef-e {
+					flex: 0 100%;
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Portfolio Project Info shortcode responsive style - end
+   ========================================================================== */

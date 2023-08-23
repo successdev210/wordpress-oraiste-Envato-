@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Testimonials list shortcode styles
+   ========================================================================== */
+
+.qodef-testimonials-list {
+	text-align: center;
+
+	.qodef-e {
+
+		&-static-title {
+			@include qodefAdditionalText($size: large);
+
+			margin: 0 0 31px 0;
+		}
+
+		&-inner {
+			padding-bottom: 40px;
+		}
+
+		&-text {
+			@include qodefHeadingStyle(h1);
+
+			line-height: 1em;
+			margin: 0 0 26px;
+		}
+
+		&-author {
+			margin: 0;
+		}
+	}
+}

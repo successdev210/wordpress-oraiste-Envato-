@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Header layout styles
+   ========================================================================== */
+
+$left-right-spacing: 12px;
+
+#qodef-page-header-inner {
+	
+	.qodef-header-standard--right & {
+		
+		.qodef-header-navigation {
+			margin-left: auto;
+		}
+	}
+	
+	.qodef-header-standard--center & {
+		
+		.qodef-header-wrapper {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			height: 100%;
+		}
+		
+		.qodef-header-logo {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			display: inline-flex;
+			align-items: center;
+		}
+		
+		.qodef-header-navigation {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		
+		.qodef-widget-holder {
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin-left: 0;
+		}
+	}
+	
+	.qodef-header-standard--left & {
+		
+		.qodef-header-navigation {
+			margin-right: auto;
+		}
+		
+		.qodef-header-logo-link {
+			margin-right: $left-right-spacing * 2;
+		}
+	}
+}

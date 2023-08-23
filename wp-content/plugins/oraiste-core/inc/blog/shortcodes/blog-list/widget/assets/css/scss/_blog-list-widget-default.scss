@@ -1,0 +1,51 @@
+/* ==========================================================================
+   Blog List Widget variable styles
+   ========================================================================== */
+
+@import '../../../../../../../../../../themes/oraiste/assets/css/scss/widgets-map';
+
+@each $key, $values in $wp-widgets-area-map {
+	$wp-widgets-map-merged: map-merge($wp-widgets-map, $values);
+
+	#{$key} .widget {
+
+		&.widget_oraiste_core_blog_list {
+
+			.qodef-blog {
+
+				&.qodef-item-layout--simple {
+
+					article {
+
+						.qodef-e {
+
+							&-media-image {
+								margin-right: #{map-get($wp-widgets-map-merged, 'thumbnail-right-margin')}px;
+								width: #{map-get($wp-widgets-map-merged, 'thumbnail-width')}px !important;
+
+								@include qodefScreenSize1366() {
+									width: #{map-get($wp-widgets-map-merged, 'thumbnail-responsive-width')}px !important;
+								}
+							}
+
+							&-title {
+
+								a {
+									@if (map-get($wp-widgets-map-merged, 'item-title-color') != null) {
+										color: map-get($wp-widgets-map-merged, 'item-title-color');
+									}
+
+									&:hover {
+										@if (map-get($wp-widgets-map-merged, 'item-title-hover-color') != null) {
+											color: map-get($wp-widgets-map-merged, 'item-title-hover-color');
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

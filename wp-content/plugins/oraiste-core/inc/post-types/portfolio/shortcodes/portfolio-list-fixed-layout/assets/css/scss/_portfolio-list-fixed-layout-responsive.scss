@@ -1,0 +1,52 @@
+.qodef-portfolio-list-fixed-layout {
+
+	@include qodefScreenSize1366() {
+
+		article {
+
+			// huge horizontal
+			&:nth-of-type(5n) {
+				margin-top: 0 !important;
+			}
+		}
+	}
+
+	@include qodefScreenSize768() {
+
+		article {
+			margin-bottom: 55px !important; // override grid system
+
+			.qodef-e-inner {
+				padding-top: 0 !important;
+			}
+
+			// large horizontal
+			&:nth-of-type(5n+1),
+			&:nth-of-type(5n+4) {
+				width: 100% !important;
+			}
+
+			// small vertical
+			&:nth-of-type(5n+2),
+			&:nth-of-type(5n+3) {
+				width: 100% !important;
+			}
+
+			// small horizontal
+			&:nth-of-type(10n+3) {
+				align-items: initial;
+			}
+		}
+	}
+
+	@include qodefScreenSize480() {
+
+		article {
+
+			.qodef-e-inner {
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+			}
+		}
+	}
+}

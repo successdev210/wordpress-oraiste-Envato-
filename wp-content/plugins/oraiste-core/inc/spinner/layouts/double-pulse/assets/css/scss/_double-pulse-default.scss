@@ -1,0 +1,28 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+	
+	&.qodef-layout--double-pulse {
+		
+		.qodef-m-pulses {
+			position: relative;
+			width: 40px;
+			height: 40px;
+			margin: -20px 0 0 -20px;
+		}
+		
+		.qodef-m-pulse {
+			@include qodefAbsoluteLayout();
+			background-color: currentColor;
+			border-radius: 50%;
+			opacity: 0.6;
+			animation: qode-double-pulse 2s infinite ease-in-out;
+			
+			&.qodef-pulse--2 {
+				animation-delay: -1.0s;
+			}
+		}
+	}
+}

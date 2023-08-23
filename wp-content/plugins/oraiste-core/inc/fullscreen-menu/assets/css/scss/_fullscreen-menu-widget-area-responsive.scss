@@ -1,0 +1,9 @@
+#qodef-fullscreen-area {
+
+	@include qodefScreenSize1024() {
+
+		.qodef-widget-holder {
+			display: none;
+		}
+	}
+}

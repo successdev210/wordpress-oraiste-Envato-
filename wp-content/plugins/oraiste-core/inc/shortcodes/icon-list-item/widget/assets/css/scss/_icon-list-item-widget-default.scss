@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Icon List Item widget styles
+   ========================================================================== */
+
+$wp-widgets-area-map: (
+		'#qodef-page-sidebar': (
+				margin-bottom: 0
+		),
+		'#qodef-page-footer': (
+				margin-bottom: 0
+		),
+		'#qodef-side-area': (
+				margin-bottom: 0
+		)
+);
+.widget.widget_oraiste_core_icon_list_item {
+	@each $key, $values in $wp-widgets-area-map {
+		#{$key} & {
+			margin-bottom: map-get($values, 'margin-bottom');
+		}
+	}
+}

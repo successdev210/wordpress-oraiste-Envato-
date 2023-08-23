@@ -1,0 +1,1 @@
+<input type="submit" name="<?php echo esc_attr( $input_name ); ?>" value="<?php echo esc_attr( $text ); ?>" <?php qode_framework_class_attribute( $holder_classes ); ?> <?php qode_framework_inline_attrs( $data_attrs ); ?> <?php qode_framework_inline_style( $styles ); ?>/>

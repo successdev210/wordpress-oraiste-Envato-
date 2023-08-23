@@ -1,0 +1,285 @@
+/* ==========================================================================
+   Header common styles
+   ========================================================================== */
+
+$left-right-spacing: 12px;
+
+#qodef-page-header {
+
+	.qodef-widget-holder {
+		align-items: center;
+		display: flex;
+		height: 100%;
+		margin-left: $left-right-spacing * 2;
+
+		.widget {
+			margin: 0 $left-right-spacing;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	div[id^="monster-widget-placeholder"],
+	div[id^="woo-monster-widget-placeholder"] {
+		display: none;
+	}
+}
+
+#qodef-page-header-inner {
+	border-bottom: 0 solid transparent;
+
+	&::after {
+		$offset: 40px;
+
+		background-color: transparent;
+		content: '';
+		height: 1px;
+		left: $offset;
+		position: absolute;
+		bottom: 0;
+		width: calc(100% - #{$offset * 2});
+	}
+
+	&.qodef-content-grid {
+		padding: 0;
+
+		&::after {
+			left: unset;
+			width: 100%;
+		}
+	}
+}
+
+// header skin
+#qodef-page-header-inner {
+
+	&.qodef-color-skin--light {
+
+		nav > ul > li {
+
+			> a {
+				color: $black !important;
+
+				.qodef-menu-item-text {
+
+					&:after {
+						background-color: $orange !important;
+					}
+				}
+			}
+
+			&.current-menu-ancestor,
+			&.current-menu-item {
+
+				color: $black !important;
+
+				.qodef-menu-item-text {
+
+					&:after {
+						background-color: $orange !important;
+					}
+				}
+			}
+		}
+
+		.qodef-opener-icon {
+
+			&.qodef-source--icon-pack,
+			&.qodef-source--svg-path,
+			&.qodef-source--predefined {
+
+				&:not(.qodef--opened) {
+
+					.qodef-m-icon {
+						color: $black !important;
+					}
+				}
+			}
+		}
+
+		.qodef-woo-dropdown-cart {
+
+			.qodef-m-opener {
+				color: $black !important;
+
+				&:after {
+					background-color: $orange !important;
+				}
+			}
+		}
+	}
+
+	&.qodef-color-skin--beige {
+
+		nav > ul > li {
+
+			> a {
+				color: $black !important;
+
+				.qodef-menu-item-text {
+
+					&:after {
+						background-color: $orange !important;
+					}
+				}
+			}
+
+			&.current-menu-ancestor,
+			&.current-menu-item {
+
+				color: $black !important;
+
+				.qodef-menu-item-text {
+
+					&:after {
+						background-color: $orange !important;
+					}
+				}
+			}
+		}
+
+		.qodef-opener-icon {
+
+			&.qodef-source--icon-pack,
+			&.qodef-source--svg-path,
+			&.qodef-source--predefined {
+
+				&:not(.qodef--opened) {
+
+					.qodef-m-icon {
+						color: $black !important;
+					}
+				}
+			}
+		}
+
+		.qodef-woo-dropdown-cart {
+
+			.qodef-m-opener {
+				color: $black !important;
+
+				&:after {
+					background-color: $orange !important;
+				}
+			}
+		}
+	}
+
+	&.qodef-color-skin--dark {
+
+		nav > ul > li {
+
+			> a {
+				color: $white !important;
+
+				.qodef-menu-item-text {
+
+					&:after {
+						background-color: $orange !important;
+					}
+				}
+			}
+
+			&.current-menu-ancestor,
+			&.current-menu-item {
+
+				color: $white !important;
+
+				.qodef-menu-item-text {
+
+					&:after {
+						background-color: $orange !important;
+					}
+				}
+			}
+		}
+
+		.qodef-opener-icon {
+
+			&.qodef-source--icon-pack,
+			&.qodef-source--svg-path,
+			&.qodef-source--predefined {
+
+				&:not(.qodef--opened) {
+
+					.qodef-m-icon {
+						color: $white !important;
+					}
+				}
+			}
+		}
+
+		.qodef-woo-dropdown-cart {
+
+			.qodef-m-opener {
+				color: $white !important;
+
+				&:after {
+					background-color: $orange !important;
+				}
+			}
+		}
+	}
+
+	&.qodef-color-skin--orange {
+
+		nav > ul > li {
+
+			> a {
+				color: $white !important;
+
+				.qodef-menu-item-text {
+
+					&:after {
+						background-color: $white !important;
+					}
+				}
+			}
+
+			&.current-menu-ancestor,
+			&.current-menu-item {
+
+				color: $white !important;
+
+				.qodef-menu-item-text {
+
+					&:after {
+						background-color: $white !important;
+					}
+				}
+			}
+		}
+
+		.qodef-opener-icon {
+
+			&.qodef-source--icon-pack,
+			&.qodef-source--svg-path,
+			&.qodef-source--predefined {
+
+				&:not(.qodef--opened) {
+
+					.qodef-m-icon {
+						color: $white !important;
+					}
+				}
+			}
+		}
+
+		.qodef-woo-dropdown-cart {
+
+			.qodef-m-opener {
+				color: $white !important;
+
+				&:after {
+					background-color: $white !important;
+				}
+			}
+		}
+	}
+}

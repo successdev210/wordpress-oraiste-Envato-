@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Global mixins
+   ========================================================================== */
+
+@mixin qodefTooltipNotice($top: 0, $right: auto, $bottom: auto, $left: 0, $translate: -100%) {
+    position: absolute;
+    top: $top;
+    bottom: $bottom;
+    right: $right;
+    left: $left;
+    width: auto;
+    padding: 0 10px;
+    font-size: 13px;
+    line-height: 30px;
+    color: $text-color;
+    background-color: #fff;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY($translate);
+    transition: opacity .2s ease;
+}
+
+@mixin qodefTooltipNoticeHover() {
+    opacity: 1;
+    visibility: visible;
+}

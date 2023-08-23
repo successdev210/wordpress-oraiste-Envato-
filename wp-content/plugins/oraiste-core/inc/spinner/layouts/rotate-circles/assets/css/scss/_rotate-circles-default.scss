@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+	
+	&.qodef-layout--rotate-circles {
+		
+		.qodef-m-circles {
+			width: 60px;
+			height: 20px;
+			
+			> div {
+				display: inline-block;
+				width: 12px;
+				height: 12px;
+				margin: 4px;
+				background-color: currentColor;
+				border-radius: 100%;
+				opacity: 0;
+				animation: qode-ball-fall 1.5s ease infinite both;
+				
+				@for $i from 1 through 3 {
+					
+					&:nth-last-of-type(#{$i}) {
+						animation-delay: calc((#{$i* 100ms}) - 300ms);
+					}
+				}
+			}
+		}
+	}
+}

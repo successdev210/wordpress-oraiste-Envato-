@@ -1,0 +1,351 @@
+.qodef-framework-admin-options {
+    #wpcontent,
+    #wpfooter {
+        background-color: $admin-background-color;
+    }
+}
+
+.qodef-hide-dependency-holder {
+    display: none;
+}
+
+.qodef-admin-page {
+    padding: 0 25px;
+
+    /*  buttons - start */
+    .qodef-btn {
+        @include adminQodefButtonDefaultStyle();
+        @include adminQodefButtonSize();
+    }
+
+    .qodef-btn-solid {
+        @include adminQodefButtonFilledColor();
+
+        &:hover {
+            @include adminQodefButtonFilledHoverColor();
+        }
+    }
+
+    .qodef-btn-outlined {
+        @include adminQodefButtonOutlinedColor();
+
+        &:hover {
+            @include adminQodefButtonOutlinedHoverColor();
+        }
+    }
+
+    /*  buttons - end */
+
+    .qodef-save-reset-loading {
+        visibility: hidden;
+        display: none;
+
+        &.qodef-show-loader {
+            visibility: visible;
+            display: block;
+        }
+    
+        .qodef-save-reset-loading-spinner {
+            display: block;
+            width: 13px;
+            height: auto;
+            fill: currentColor;
+            animation: qode-spin 2s infinite linear;
+        }
+    }
+
+    .qodef-save-success {
+        display: none;
+    }
+
+    &.qodef-save-reset-disable {
+        .qodef-admin-page,
+        .qodef-form-save-holder,
+        .qodef-form-reset-holder,
+        .qodef-search-holder {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    }
+
+    .qodef-admin-header {
+        display: flex;
+        align-items: center;
+        padding: 5px 0;
+        position: relative;
+        z-index: 10;
+        background-color: $admin-background-color;
+        border-bottom: 1px solid $admin-border-color;
+        position: relative;
+
+        &.qodef-fixed {
+            position: fixed;
+        }
+
+        .qodef-header-left {
+            flex: 0 0 65%;
+        }
+
+        .qodef-header-right {
+            flex: 0 0 35%;
+            transition: opacity 0.3s ease;
+        }
+
+        .qodef-header-right-inner {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            > div {
+                margin-right: 17px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .qodef-header-left-inner {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            > div {
+                margin-right: 45px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+        
+        .qodef-logo-holder {
+            
+            a {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                
+                img {
+                    display: block;
+                }
+            }
+        }
+
+        .qodef-help-center-holder {
+
+            img {
+                margin-right: 8px;
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                font-family: $admin-heading-font;
+                font-size: 12px;
+                letter-spacing: 0.13em;
+                text-transform: uppercase;
+                color: $admin-heading-color;
+                text-decoration: none;
+
+                &:hover {
+                    color: $admin-main-color;
+                }
+            }
+        }
+
+        .qodef-search-holder {
+            max-width: 340px;
+            width: 100%;
+            position: relative;
+            transition: opacity 0.3s ease;
+
+            .qodef-search-icon {
+                position: absolute;
+                top: calc(50% - 7px);
+                left: 19px;
+                z-index: 1;
+                width: 14px;
+                height: auto;
+                fill: currentColor;
+            }
+
+            .qodef-search-field {
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                vertical-align: top;
+                margin: 0;
+                padding: #{($admin-input-fields-height - $admin-input-fields-text-line-height) / 2}px #{$admin-input-fields-side-padding}px #{($admin-input-fields-height - $admin-input-fields-text-line-height) / 2}px 43px;
+                font-family: $admin-heading-font;
+                font-size: #{$admin-input-fields-text-size}px;
+                line-height: #{$admin-input-fields-text-line-height}px;
+                font-weight: inherit;
+                color: $admin-input-fields-text-color;
+                background-color: $admin-input-fields-background-color;
+                border: 1px solid $admin-input-fields-border-color;
+                border-radius: 30px;
+                outline: 0;
+                cursor: pointer;
+                transition: $admin-color-transition, $admin-background-color-transition, $admin-border-color-transition;
+                box-shadow: none;
+                box-sizing: border-box;
+
+                &:focus {
+                    color: $admin-input-fields-focus-text-color;
+                    background-color: $admin-input-fields-focus-background-color;
+                    border-color: #c1c1c5;
+                }
+
+                @include adminQodefPlaceholder {
+                    color: inherit;
+                }
+            }
+
+            .qodef-search-loading {
+                position: absolute;
+                top: calc(50% - 7px);
+                right: 20px;
+                width: 13px;
+                height: auto;
+                fill: currentColor;
+                animation: qode-spin 2s infinite linear;
+                
+                &.qodef-hidden {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    .qodef-apply-search {
+        .tab-content,
+        .qodef-section-wrapper,
+        .qodef-row-wrapper,
+        .qodef-repeater-wrapper {
+            display: none;
+
+            &.qodef-search-show,
+            &.qodef-search-show.qodef-hide-dependency-holder,
+            &.qodef-search-show.qodef-hide-pane,
+            &.qodef-show-dependency-holder .qodef-search-hide,
+            &.qodef-show-dependency-holder {
+                display: block;
+            }
+        }
+
+        .qodef-search-hide {
+            display: none;
+        }
+
+        .qodef-tabs-navigation-wrapper {
+            opacity: 0.5;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            .qodef-active:not(:hover) {
+                color: inherit;
+
+                > span:before {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    .qodef-admin-content {
+        display: flex;
+        transition: opacity 0.3s ease;
+    }
+
+    .qodef-tabs-navigation-wrapper {
+        flex: 0 0 14%;
+        transition: opacity 0.3s ease;
+    }
+
+    ul.navbar-nav {
+        border-left: 1px solid $admin-border-color;
+        padding: 0 18px;
+        box-sizing: border-box;
+        margin-left: 8px;
+        margin-top: 53px;
+        padding-bottom: 10px;
+
+        @media only screen and (min-width: 1024px) {
+            left: 0 !important;
+        }
+
+        li {
+            display: block;
+            @include adminQodefH6Style();
+            color: $admin-heading-color-second;
+            cursor: pointer;
+            transition: color 0.3s ease;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            > span {
+                position: relative;
+
+                &:before {
+                    content: "";
+                    width: 1px;
+                    height: 20px;
+                    background-color: transparent;
+                    position: absolute;
+                    left: -19px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    transition: $admin-background-color-transition;
+                }
+            }
+
+            &:hover,
+            &.qodef-active {
+                color: $admin-heading-color;
+
+                > span {
+                    &:before {
+                        background-color: $admin-main-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .qodef-tabs-content {
+        background-color: $admin-background-color;
+        display: inline-block;
+        width: 100%;
+        border-left: 1px solid $admin-border-color;
+        box-sizing: border-box;
+        margin-top: -36px; //tab content margin top + border
+
+        .tab-content {
+            margin-top: 35px;
+            border-top: 1px solid $admin-border-color;
+
+            &.qodef-hide-pane {
+                display: none;
+            }
+        }
+    }
+
+    .qodef-page-title {
+        padding: 18px 25px;
+        border-bottom: 1px solid $admin-border-color;
+        font-family: $admin-text-font;
+        font-size: 13px;
+        font-weight: 400;
+        color: $admin-heading-color-second;
+        letter-spacing: 0.01em;
+
+        .qodef-page-description {
+            color: $admin-heading-color;
+        }
+    }
+}

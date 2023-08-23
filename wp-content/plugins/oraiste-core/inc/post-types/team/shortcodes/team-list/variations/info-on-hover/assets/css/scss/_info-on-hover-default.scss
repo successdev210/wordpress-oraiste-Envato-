@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Team List shortcode variation styles
+   ========================================================================== */
+
+.qodef-team-list {
+
+	&.qodef-item-layout--info-on-hover {
+
+		.qodef-e-inner {
+			display: grid;
+			grid-template-areas: "center";
+
+			&:hover {
+
+				.qodef-e-content {
+					opacity: 0.8;
+					z-index: 1; // safari fix
+				}
+			}
+		}
+
+		.qodef-e-image {
+			grid-area: center;
+		}
+
+		.qodef-e-content {
+			align-items: flex-start;
+			background-color: var(--qode-background-color);
+			display: flex;
+			flex-direction: column;
+			grid-area: center;
+			height: 100%;
+			justify-content: flex-end;
+			opacity: 0;
+			padding: 20px 20px 16px 20px;
+			transition: .35s ease-out;
+			width: 100%;
+			z-index: -1; // safari fix
+		}
+
+		.qodef-e-title {
+			margin: 2px 0 0 0;
+		}
+
+		.qodef-e-custom-text {
+
+			.qodef-e-inner {
+				align-items: flex-end;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+
+			.qodef-e-link {
+				@include qodefAbsoluteLayout();
+
+				&:hover {
+
+					~ .qodef-e {
+
+						&-title {
+							color: var(--qode-main-color);
+						}
+
+						&-text {
+							color: var(--qode-main-color);
+						}
+					}
+				}
+			}
+
+			.qodef-e-title {
+				margin: 2px 0 10px 0;
+				transition: $color-transition;
+			}
+
+			.qodef-e-text {
+				font-weight: $button-font-weight;
+				margin: 0 0 14px 10px;
+				transition: $color-transition;
+			}
+		}
+
+		.qodef-e-custom-text-with-button {
+
+			.qodef-e {
+
+				&-inner {
+					grid-template-areas: "title" "text" "button";
+					padding: 40px 40px 0 40px;
+					place-items: center start;
+				}
+
+				&-title {
+					margin: 0;
+				}
+
+				&-text {
+					margin: 2px 0 40px 0;
+				}
+			}
+		}
+
+		&.qodef-column-span--2 {
+
+			@for $i from 0 to $grid-columns-layout-size {
+				$step: $i + 1;
+
+				&.qodef-col-num--#{$step} {
+					$custom-column-width: 100%/$step;
+
+
+					@if ($i > 0) {
+						> .qodef-grid-inner {
+
+							> .qodef-e-custom-content-item {
+								width: $custom-column-width*2;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

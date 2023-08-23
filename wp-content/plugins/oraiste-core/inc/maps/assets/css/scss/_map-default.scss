@@ -1,0 +1,341 @@
+/* ==========================================================================
+   Map styles
+   ========================================================================== */
+
+#qodef-multiple-map-notice {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 30px 15%;
+    text-align: center;
+    color: $main-color;
+    background-color: $additional-background-color;
+}
+
+.qodef-map-marker-holder {
+    transform: translate(-50%, -100%);
+    z-index: 10;
+
+    &.qodef-active {
+        z-index: 500;
+
+        .qodef-map-marker {
+
+            svg {
+
+                path {
+
+                    &:first-child {
+                        fill: #3EBEB4;
+                    }
+
+                    &:last-child {
+                        fill: #51A69E;
+                    }
+                }
+            }
+        }
+    }
+
+    &#qodef-geo-location-marker {
+
+        .qodef-info-window {
+            display: block;
+        }
+
+        .qodef-map-marker {
+
+            svg {
+
+                path {
+
+                    &:first-child {
+                        fill: #3EBEB4;
+                    }
+
+                    &:last-child {
+                        fill: #51A69E;
+                    }
+                }
+            }
+        }
+    }
+
+    .qodef-map-marker {
+        position: relative;
+        width: 50px;
+        height: auto;
+        transition: all 0.15s ease-out;
+
+        .qodef-map-marker-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        svg {
+            width: 100%;
+            height: auto;
+
+            path {
+                transition: fill .2s ease-in-out;
+            }
+        }
+
+        &:hover {
+
+            svg {
+
+                path {
+
+                    &:first-child {
+                        fill: #3EBEB4;
+                    }
+
+                    &:last-child {
+                        fill: #51A69E;
+                    }
+                }
+            }
+        }
+    }
+
+    .qodef-info-window {
+        position: absolute;
+        top: -10px;
+        left: -17px;
+        display: none;
+        min-width: 284px;
+        background-color: #fff;
+        border: 1px solid $border-color;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        z-index: 10;
+        transition: opacity 0.3s ease;
+        transform: translate(0, -100%);
+    }
+
+    .qodef-info-window-inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 8px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 35px;
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            border-top: 1px solid $border-color;
+            border-left: 1px solid $border-color;
+            transform: rotate(-135deg);
+        }
+
+        .qodef-info-window-image {
+            margin-right: 12px;
+
+            img {
+                display: block;
+                width: 65px;
+            }
+        }
+
+        .qodef-info-window-title {
+            margin: 0;
+            transition: color .2s ease-out;
+        }
+
+        .qodef-info-window-location {
+            margin: 3px 0 0;
+            font-family: $text-font;
+            font-size: 14px;
+            line-height: 1.2em;
+        }
+
+        .qodef-info-window-link {
+            @include qodefAbsoluteLayout();
+            z-index: 5;
+
+            &:hover {
+
+                ~ .qodef-info-window-details .qodef-info-window-title {
+                    color: $main-color;
+                }
+            }
+        }
+    }
+}
+
+/* cluster marker - begin */
+
+.qodef-cluster-marker {
+    width: 50px;
+    height: auto;
+
+    &.qodef-active,
+    &:hover {
+
+        svg {
+
+            path {
+
+                &:first-child {
+                    fill: #3EBEB4;
+                }
+
+                &:last-child {
+                    fill: #51A69E;
+                }
+            }
+        }
+    }
+
+    .qodef-cluster-marker-inner {
+        position: relative;
+
+        .qodef-cluster-marker-number {
+            position: absolute;
+            top: -4px;
+            left: 0;
+            right: 0;
+            font-size: 30px;
+            font-weight: 700;
+            text-align: center;
+            color: $heading-color;
+        }
+    }
+
+    svg {
+        width: 100%;
+        height: auto;
+
+        path {
+            transition: fill .2s ease-in-out;
+        }
+    }
+}
+
+/* noUiSlider - begin */
+
+.qodef-places-geo-radius {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 10px);
+    width: 100%;
+    height: 48px;
+    display: none;
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 1px solid $border-color;
+    z-index: 9999;
+
+    .qodef-range-slider-label {
+        display: inline-flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .noUi-target {
+        position: relative;
+        display: inline-flex;
+        height: 3px;
+        width: calc(100% - 70px);
+        background-color: #eaeaea;
+        border: 0;
+        direction: ltr;
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-user-select: none;
+        -ms-touch-action: none;
+        touch-action: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        margin-left: 10px;
+
+        * {
+            -webkit-touch-callout: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-user-select: none;
+            -ms-touch-action: none;
+            touch-action: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        .noUi-base {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .noUi-connects {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .noUi-connect,
+        .noUi-origin {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            will-change: transform;
+            transform-origin: 0 0;
+        }
+
+        .noUi-connect {
+            background-color: $main-color;
+        }
+
+        .noUi-handle {
+            position: absolute;
+            top: -3px;
+            left: auto;
+            right: -9px;
+            width: 9px;
+            height: 9px;
+            background-color: $main-color;
+            cursor: pointer;
+        }
+
+        .noUi-tooltip {
+            position: absolute;
+            left: 50%;
+            bottom: 7px;
+            display: block;
+            font-size: 12px;
+            white-space: nowrap;
+            transform: translateX(-50%);
+
+            &:after {
+                content: ' km';
+            }
+        }
+    }
+
+    .noUi-state-drag * {
+        cursor: inherit !important;
+    }
+
+    .noUi-draggable {
+        cursor: ew-resize;
+    }
+
+    [disabled].noUi-target,
+    [disabled].noUi-handle,
+    [disabled] .noUi-handle {
+        cursor: not-allowed !important;
+    }
+}

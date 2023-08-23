@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Single Post Navigation styles
+   ========================================================================== */
+
+#qodef-single-portfolio-navigation {
+
+	@include qodefScreenSize480() {
+
+		.qodef-m {
+
+			&-nav {
+
+				&-label {
+					display: none;
+				}
+			}
+		}
+	}
+}

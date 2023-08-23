@@ -1,0 +1,63 @@
+1.1.5
+- Added WordPress 5.7 compatibility
+- Improved icon field type for Widgets module
+- Improved icon field type for Shortcodes module - Elementor page builder
+- Improved dependency logic for options
+- Improved date fields functionality
+
+1.1.4
+- Added WordPress 5.6 compatibility
+- Added Custom Post Type show_in_rest parameter
+- Improved PHP 8 compatibility
+- Improved select box dependency for tabbed options
+- Fixed shortcode options when value is zero
+
+1.1.3
+- Added WordPress 5.5 compatibility
+- Refactored plugin to be by WordPress standards
+- Improved address field reset marker link position
+- Improved reset functionality for date fields type
+- Fixed option value for checkbox fields type
+- Fixed font family inline style rendering
+- Fixed repeater when delete last item
+
+1.1.2
+- Added Developer Tools tab content for Elementor shortcodes
+- Added show_in_menu property for custom post type and taxonomy
+- Added iconpack field type functionality for shortcodes repeater fields
+- Added qode_framework_is_shortcode_on_page_elementor function
+- Added qode_framework_filter_icon_pack_enqueue_handle filter hook
+- Improved update post meta functionality
+- Fixed setter methods for framework classes
+- Fixed enqueue shortcodes styles for Elementor page builder
+- Fixed undefined variables for Elementor translator main script
+
+1.1.1
+- Added hidden field type
+- Added qode_framework_get_cpt_taxonomy_name_by_ids function
+- Added qode_framework_get_dates_from_date_range function
+- Improved translators with textarea_html field type
+- Improved custom post types with capabilities property
+- Improved front-end fields script
+- Improved address field type
+- Improved repeater wrapper with custom_class attribute
+- Updated fontIconPicker script to 3.1.1 version
+- Fixed rest api callback functions
+- Fixed repeater image multiple
+
+1.1
+- Added customizer fields and functions
+- Added set_single_att method for shortcodes
+- Added Elementor page builder translator
+- Added address field type
+- Improved dashboard panel with svg icons instead of icon packs
+- Improved custom sidebar options with default value
+- Improved plugin performance
+- Improved save functions to allow zero value
+- Improved text field types with disabled attribute
+- Improved widget core class with load_assets method
+- Changed shortcode scripts registration
+- Fixed dependency when "hide" values are in array for WPBakery Page Builder
+- Fixed audio and font files upload
+- Fixed problem with encoding repeater items
+- Fixed text field type for attachments

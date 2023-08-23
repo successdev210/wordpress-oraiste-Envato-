@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Team List shortcode variation responsive styles
+   ========================================================================== */
+
+.qodef-team-list {
+	
+	&.qodef-item-layout--info-on-side {
+
+		@include qodefScreenSize1024 {
+
+			.qodef-e-inner {
+				flex-direction: column;
+			}
+
+			.qodef-e-content {
+				flex: initial;
+				margin-left: 0;
+				margin-top: 20px;
+			}
+
+			.qodef-e-image {
+				flex: initial;
+			}
+
+			.qodef-e-description {
+				margin: 20px 0;
+			}
+		}
+
+		@include qodefScreenSize768 {
+
+			.qodef-e-inner{
+				padding-bottom: 0;
+			}
+		}
+	}
+}

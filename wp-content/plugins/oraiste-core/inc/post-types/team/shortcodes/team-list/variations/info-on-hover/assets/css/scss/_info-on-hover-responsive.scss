@@ -1,0 +1,114 @@
+/* ==========================================================================
+   Team List shortcode variation responsive styles
+   ========================================================================== */
+
+.qodef-team-list {
+
+	&.qodef-item-layout--info-on-hover {
+
+		@include qodefScreenSize1366() {
+
+			.qodef-e-custom-text-with-button {
+
+				.qodef-e {
+
+					&-inner {
+						padding: 30px 30px 0 30px;
+					}
+
+					&-text {
+						margin: 2px 0 30px 0;
+					}
+				}
+			}
+		}
+
+		@include qodefScreenSize1280() {
+
+			.qodef-e-custom-text-with-button {
+
+				.qodef-e {
+
+					&-inner {
+						padding: 20px 20px 0 20px;
+					}
+
+					&-text {
+						margin: 2px 0 20px 0;
+					}
+				}
+			}
+		}
+
+		&.qodef-responsive--predefined {
+
+			@each $key, $values in $grid-columns-layout-responsive-map {
+
+				@media only screen and (max-width: map-deep-get($grid-columns-layout-responsive-map, $key, 'responsive-stage')) {
+
+					@each $column in map-deep-get($grid-columns-layout-responsive-map, $key, 'columns-label') {
+
+						&.qodef-col-num--#{$column} {
+							$responsive-break: map-deep-get($grid-columns-layout-responsive-map, $key, 'responsive-break');
+							$column-size: map-deep-get($grid-columns-layout-responsive-map, $key, 'columns-size');
+							$custom-columns-responsive: map-deep-get($grid-columns-layout-responsive-map, $key, 'custom-columns-responsive');
+
+							@if ($custom-columns-responsive != null) {
+
+								@if (index(map_get($custom-columns-responsive, 'custom-columns-label'), $column) != null) {
+									$column-size: map_get($custom-columns-responsive, 'custom-columns-size');
+								}
+							}
+
+							$column-width: 100% / $column-size;
+
+							&.qodef-column-span--2 {
+
+								> .qodef-grid-inner > .qodef-e-custom-content-item {
+
+									@if ($column-size != 1) {
+										width: $column-width*2;
+									} @else {
+										width: $column-width;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.qodef-responsive--custom {
+
+			@each $key, $values in $grid-columns-layout-custom-responsive-map {
+
+				@media only screen and (max-width: map-deep-get($grid-columns-layout-custom-responsive-map, $key, 'responsive-stage')) {
+
+					@for $j from 0 to $grid-columns-layout-size {
+						$step: $j + 1;
+
+						$responsive-break: map-deep-get($grid-columns-layout-custom-responsive-map, $key, 'responsive-break');
+						$columns-label: map-deep-get($grid-columns-layout-custom-responsive-map, $key, 'columns-label');
+						$column-width: 100% / $step;
+
+						&.qodef-col-num--#{$columns-label}--#{$step} {
+
+							&.qodef-column-span--2 {
+
+								> .qodef-grid-inner > .qodef-e-custom-content-item {
+
+									@if ($step > 1) {
+										width: $column-width*2;
+									} @else {
+										width: $column-width;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

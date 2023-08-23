@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'Canela';
+    src: url('../fonts/CanelaText-BlackItalic.woff2') format('woff2'),
+        url('../fonts/CanelaText-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Canela';
+    src: url('../fonts/CanelaText-Black.woff2') format('woff2'),
+        url('../fonts/CanelaText-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Canela';
+    src: url('../fonts/CanelaText-LightItalic.woff2') format('woff2'),
+        url('../fonts/CanelaText-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Canela';
+    src: url('../fonts/CanelaText-Bold.woff2') format('woff2'),
+        url('../fonts/CanelaText-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Canela';
+    src: url('../fonts/CanelaText-Light.woff2') format('woff2'),
+        url('../fonts/CanelaText-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Canela';
+    src: url('../fonts/CanelaText-BoldItalic.woff2') format('woff2'),
+        url('../fonts/CanelaText-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Canela';
+    src: url('../fonts/CanelaText-Regular.woff2') format('woff2'),
+        url('../fonts/CanelaText-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Canela';
+    src: url('../fonts/CanelaText-RegularItalic.woff2') format('woff2'),
+        url('../fonts/CanelaText-RegularItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Canela';
+    src: url('../fonts/CanelaText-Medium.woff2') format('woff2'),
+        url('../fonts/CanelaText-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Canela';
+    src: url('../fonts/CanelaText-RegularNo2Italic.woff2') format('woff2'),
+        url('../fonts/CanelaText-RegularNo2Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Canela';
+    src: url('../fonts/CanelaText-MediumItalic.woff2') format('woff2'),
+        url('../fonts/CanelaText-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Canela';
+    src: url('../fonts/CanelaText-RegularNo2.woff2') format('woff2'),
+        url('../fonts/CanelaText-RegularNo2.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Canela';
+    src: url('../fonts/CanelaText-ThinItalic.woff2') format('woff2'),
+        url('../fonts/CanelaText-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Canela';
+    src: url('../fonts/CanelaText-Thin.woff2') format('woff2'),
+        url('../fonts/CanelaText-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+

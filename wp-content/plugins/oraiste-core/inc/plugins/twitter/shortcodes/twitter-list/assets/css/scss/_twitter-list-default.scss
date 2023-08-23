@@ -1,0 +1,229 @@
+/* ==========================================================================
+   Instagram List shortcode styles
+   ========================================================================== */
+.qodef-twitter-list {
+	
+	&.qodef-layout--columns {
+		
+		&.qodef--no-bottom-info {
+			#ctf {
+				.ctf-tweet-actions {
+					display: none;
+				}
+			}
+		}
+		
+		#ctf {
+			overflow: hidden;
+			
+			.ctf-item {
+				@include qodefRelativeLayout();
+				float: left;
+				border: 0;
+			}
+			
+			.ctf-author-box {
+				margin-left: 0;
+				display: block;
+				margin-bottom: 8px;
+			}
+			
+			.ctf-author-box-link {
+				line-height: 1 !important;
+				display: flex;
+				align-items: center;
+				flex-flow: row wrap;
+			}
+			
+			.ctf-author-avatar {
+				width: 37px;
+				height: 37px;
+				margin: 0 7px 0 0;
+				float: none;
+				border-radius: 0;
+			}
+			
+			.ctf-author-name {
+				@include qodefHeadingStyle(h5);
+				font-weight: 600 !important;
+				margin: 0 4px 0 0;
+			}
+			
+			.ctf-screename-sep {
+				display: none;
+			}
+			
+			.ctf-context,
+			.ctf-twitterlink,
+			.ctf-tweet-meta {
+				@include qodefParagraphStyle();
+				margin-right: 4px;
+				margin-left: 0;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+			
+			.ctf-tweet-meta {
+				margin-top: 4px;
+			}
+			
+			.ctf-author-screenname {
+				display: none;
+			}
+			
+			.ctf-tweet-content {
+				display: flex;
+				align-items: baseline;
+				margin-left: 0;
+				padding: 0;
+				margin-top: -5px;
+				&:before {
+					content: '\e094';
+					font-family: ElegantIcons;
+					padding-right: 10px;
+					font-size: 18px;
+					position: relative;
+					top: 5px;
+				}
+			}
+			
+			.ctf-tweet-actions {
+				display: flex;
+				align-items: baseline;
+				margin-left: 0;
+				margin-top: -3px;
+				&:before {
+					content: '\e094';
+					font-family: ElegantIcons;
+					padding-right: 10px;
+					font-size: 18px;
+					visibility: hidden;
+				}
+				
+				a {
+					padding: 0;
+					font-size: 14px;
+					margin-right: 8px;
+					&:last-child {
+						margin-right: 0;
+					}
+					&.ctf-reply {
+						margin-left: 0;
+					}
+				}
+			}
+		}
+		
+		.ctf-tweets {
+			&:before {
+				content: "";
+				display: table;
+				table-layout: fixed;
+			}
+			&:after {
+				clear: both;
+			}
+		}
+		
+		@for $i from 0 to $grid-columns-layout-size {
+			$step: $i + 1;
+			
+			&.qodef-col-num--#{$step} {
+				$column-width: 100%/$step;
+				#ctf {
+					.ctf-tweets {
+						
+						> .ctf-item {
+							width: $column-width;
+						}
+					}
+				}
+				
+				&.qodef-responsive--predefined {
+					
+					#ctf {
+						.ctf-tweets {
+							
+							> .ctf-item {
+								
+								@if ($i > 0) {
+									
+									@media only screen and (min-width: map-get($grid-columns-layout-map, $step)) {
+										
+										&:nth-child(#{$step}n+1) {
+											clear: both;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				
+				&.qodef-responsive--custom {
+					
+					#ctf {
+						.ctf-tweets {
+							
+							> .ctf-item {
+								
+								@if ($i > 0) {
+									
+									@media only screen and (min-width: $screen-size-1441) {
+										
+										&:nth-child(#{$step}n+1) {
+											clear: both;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	
+	@for $i from 0 to length($grid-columns-gutter-label) {
+		&.qodef-gutter--#{nth($grid-columns-gutter-label,$i+1)} {
+			$gutter-size: nth($grid-columns-gutter-size, $i+1);
+			$gutter-double-size: $gutter-size * 2;
+			
+			&.qodef--no-bottom-space {
+				
+				@if ($gutter-size == 0) {
+					margin-bottom: 0;
+				} @else {
+					margin-bottom: -#{$gutter-double-size}px;
+				}
+			}
+			
+			#ctf {
+				.ctf-tweets {
+					@if ($gutter-size == 0) {
+						margin: 0;
+					} @else {
+						margin: 0 -#{$gutter-size}px;
+					}
+					
+					> .ctf-item {
+						
+						@if ($gutter-size == 0) {
+							padding: 0;
+							margin: 0;
+						} @else {
+							padding: 0 #{$gutter-size}px;
+							margin: 0 0 #{$gutter-double-size}px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Instagram List shortcode styles
+   ========================================================================== */

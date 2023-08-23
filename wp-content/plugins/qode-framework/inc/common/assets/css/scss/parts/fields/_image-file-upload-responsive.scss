@@ -1,0 +1,20 @@
+.qodef-image-uploader {
+	
+	@media only screen and (max-width: 680px) {
+		
+		display: block;
+		
+		.qodef-single-image,
+		.qodef-file-name,
+		.qodef-image-upload-btn {
+			margin-right: 0;
+			margin-bottom: 20px;
+		}
+		
+		.qodef-image-upload-btn,
+		.qodef-image-remove-btn {
+			min-width: 50%;
+			text-align: center;
+		}
+	}
+}

@@ -1,0 +1,74 @@
+.qodef-button {
+
+	&.qodef-layout--textual-animated {
+		$circle-size: 99px; // must be an odd number
+		$circle-offset: 2px;
+
+		align-items: center;
+		background-color: transparent;
+		color: var(--qode-button-text-color);
+		display: inline-flex;
+		margin-top: $circle-offset;
+		min-height: $circle-size;
+		padding: 0 !important;
+		transition: color .35s ease-out,background-color .35s ease-out,border-color .35s ease-out;
+
+		.qodef-m {
+
+			&-text {
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			&-arrow {
+				margin-left: 10px;
+				padding-right: 64px;
+
+				svg {
+					width: 34px; // svg artboard width
+				}
+			}
+
+			&-circle {
+				position: absolute;
+				right: 0;
+
+				svg {
+					fill: none;
+					height: $circle-size;
+					stroke: var(--qode-button-circle-color);
+					stroke-width: 1.7;
+					top: -$circle-offset;
+					width: $circle-size;
+				}
+			}
+		}
+
+		&.qodef-size--small {
+			$circle-size: 82px; // must be an odd number
+			$circle-offset: 3px;
+
+			margin-top: $circle-offset;
+			min-height: $circle-size;
+
+			.qodef-m {
+
+				&-arrow {
+					padding-right: 52px;
+				}
+
+				&-circle {
+					svg {
+						height: $circle-size;
+						top: -$circle-offset;
+						width: $circle-size;
+					}
+				}
+			}
+		}
+
+		&:hover {
+			color: var(--qode-button-text-hover-color);
+		}
+	}
+}

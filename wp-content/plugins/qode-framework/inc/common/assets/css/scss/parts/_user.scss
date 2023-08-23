@@ -1,0 +1,15 @@
+.form-table th,
+.form-table td {
+	box-sizing: border-box;
+}
+.qodef-page {
+	&.qodef-options-user {
+		.user-field td {
+			position: relative;
+		}
+		
+		.wp-picker-holder {
+			top: 40px;
+		}
+	}
+}

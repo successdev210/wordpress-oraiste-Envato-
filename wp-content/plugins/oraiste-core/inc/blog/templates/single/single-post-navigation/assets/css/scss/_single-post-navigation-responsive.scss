@@ -1,0 +1,44 @@
+/* ==========================================================================
+   Single Post Navigation responsive styles
+   ========================================================================== */
+
+#qodef-single-post-navigation {
+	$distance: 0;
+
+	@include qodefScreenSize680 {
+
+		.qodef-m {
+
+			&-nav {
+				flex-direction: column-reverse;
+
+				&-content {
+					margin-top: 10px;
+				}
+
+				&.qodef--prev {
+					flex-direction: column-reverse;
+
+					.qodef-m-nav {
+
+						&-content {
+							align-self: flex-start;
+							margin-left: $distance;
+						}
+					}
+				}
+
+				&.qodef--next {
+
+					.qodef-m-nav {
+
+						&-content {
+							align-self: flex-end;
+							margin-right: $distance;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,38 @@
+/* ==========================================================================
+   Fixed header styles
+   ========================================================================== */
+
+.qodef-header--fixed-display {
+	
+	#qodef-top-area,
+	#qodef-page-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+	
+	#qodef-top-area {
+		
+		@at-root .qodef--boxed#{&} {
+			left: $boxed-grid-padding-size;
+			width: calc(100% - #{2 * $boxed-grid-padding-size});
+		}
+	}
+	
+	#qodef-page-header {
+		
+		@at-root .qodef--boxed#{&} {
+			left: $boxed-grid-padding-size;
+			width: calc(100% - #{2 * $boxed-grid-padding-size});
+		}
+	}
+	
+	&.admin-bar {
+		
+		#qodef-top-area,
+		#qodef-page-header {
+			top: 32px;
+		}
+	}
+}

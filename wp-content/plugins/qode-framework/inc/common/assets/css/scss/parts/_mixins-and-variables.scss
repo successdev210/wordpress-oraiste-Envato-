@@ -1,0 +1,344 @@
+/* ==========================================================================
+   Color variables - start
+   ========================================================================== */
+$admin-main-color: #ee2852;
+$admin-hover-color1: #b7b7b7;
+$admin-hover-color2: #fd315c;
+$admin-border-color: #ebebeb;
+$admin-background-color: #fff;
+$admin-background-color-second: #f7f8f9;
+$admin-bar-height: 32px;
+$admin-bar-height-responsive: 46px;
+
+$admin-heading-color: #000000;
+$admin-heading-color-second: #727272;
+$admin-heading-font: 'Heebo', sans-serif;
+
+$admin-text-color: #666666;
+$admin-text-font: 'Roboto', sans-serif;
+$admin-text-font-size: 15px;
+$admin-text-line-height: 24px;
+$admin-text-font-weight: 400;
+
+$admin-tabs-color: #e1e1e1;
+
+$admin-transition-timing: .2s ease-out;
+$admin-color-transition: color $admin-transition-timing;
+$admin-background-color-transition: background-color $admin-transition-timing;
+$admin-border-color-transition: border-color $admin-transition-timing;
+$admin-opacity-transition: opacity $admin-transition-timing;
+
+/* Input fields */
+$admin-input-fields-width: 280;
+$admin-input-fields-height: 48;
+$admin-input-fields-side-padding: 25;
+$admin-input-fields-text-size: 13;
+$admin-input-fields-text-line-height: 37;
+$admin-input-fields-text-color: #696969;
+$admin-input-fields-focus-text-color: $admin-heading-color;
+$admin-input-fields-background-color: $admin-background-color;
+$admin-input-fields-focus-background-color: $admin-background-color;
+$admin-input-fields-border-color: #dedee1;
+$admin-input-fields-focus-border-color: $admin-heading-color;
+
+$admin-dropdown-background-color: $admin-background-color;
+$admin-dropdown-border-color: #dedee1;
+
+// checkbox mixins - start
+
+$admin-checkbox-size: 20px;
+$admin-checkbox-border-width: 1px;
+
+%admin-checkbox-style {
+    position: relative;
+    margin: 8px 0;
+    line-height: 1;
+
+    input[type=checkbox],
+    input[type=radio] {
+        width: $admin-checkbox-size;
+        height: $admin-checkbox-size;
+        max-height: $admin-checkbox-size;
+        border-radius: $admin-checkbox-size;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        top: 0;
+        left: 0;
+        margin: 0;
+        border: 0;
+        box-shadow: none;
+    }
+
+    input[type=checkbox] {
+        border-radius: 0;
+    }
+
+    input[type=checkbox] + label,
+    input[type=radio] + label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        line-height: 0;
+        pointer-events: none;
+        cursor: pointer;
+    }
+
+    input[type=checkbox] + label .qodef-label-text,
+    input[type=radio] + label .qodef-label-text {
+        display: inline-block;
+        padding-left: 10px;
+        line-height: $admin-checkbox-size;
+        color: $admin-heading-color-second;
+        font-family: $admin-heading-font;
+        font-size: 13px;
+    }
+
+    input[type=checkbox] + label .qodef-label-view,
+    input[type=radio] + label .qodef-label-view {
+        display: inline-block;
+        vertical-align: top;
+        width: $admin-checkbox-size;
+        height: $admin-checkbox-size;
+        background-color: $admin-background-color;
+        border: $admin-checkbox-border-width solid $admin-border-color;
+        border-radius: $admin-checkbox-size;
+        cursor: pointer;
+        box-sizing: border-box;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    input[type=checkbox] + label .qodef-label-view {
+        border-radius: 0;
+    }
+
+    input[type=checkbox] + label .qodef-label-view:after,
+    input[type=radio] + label .qodef-label-view:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $admin-checkbox-size;
+        height: $admin-checkbox-size;
+        background-image: url('../img/qode-icon-checked.png');
+        background-size: cover;
+        border-radius: $admin-checkbox-size;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    input[type=checkbox] + label .qodef-label-view:after {
+        border-radius: 0;
+    }
+
+    input[type=checkbox]:checked + label .qodef-label-view:after,
+    input[type=radio]:checked + label .qodef-label-view:after {
+        opacity: 1;
+    }
+
+    input[type=checkbox]:checked + label .qodef-label-text,
+    input[type=radio]:checked + label .qodef-label-text {
+        color: $admin-heading-color;
+    }
+}
+
+// checkbox mixins - end
+
+/* ==========================================================================
+   Color variables - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Font mixins - start
+   ========================================================================== */
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Heebo';
+    src: url('../fonts/Heebo-Light.ttf') format('truetype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Heebo';
+    src: url('../fonts/Heebo-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Heebo';
+    src: url('../fonts/Heebo-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+
+@mixin adminQodefParagraphStyle() {
+    font-family: $admin-text-font;
+    font-size: $admin-text-font-size;
+    line-height: $admin-text-line-height;
+    font-weight: $admin-text-font-weight;
+    color: $admin-text-color;
+}
+
+@mixin adminQodefH1Style() {
+    font-size: 28px;
+    line-height: 1.1em;
+    font-weight: 300;
+    font-family: $admin-heading-font;
+    margin: 0 0 15px;
+    color: $admin-heading-color;
+}
+
+/* This can be changed */
+@mixin adminQodefH2Style() {
+    font-size: 22px;
+    line-height: 1.1em;
+    font-weight: 400;
+    font-family: $admin-heading-font;
+    margin: 0 0 15px;
+    color: $admin-heading-color;
+}
+
+@mixin adminQodefH3Style() {
+    font-size: 18px;
+    line-height: 1.3em;
+    font-weight: 400;
+    font-family: $admin-heading-font;
+    margin: 0 0 15px;
+    color: $admin-heading-color;
+}
+
+/* This can be changed */
+@mixin adminQodefH4Style() {
+    font-size: 16px;
+    line-height: 1.1em;
+    font-weight: 400;
+    font-family: $admin-heading-font;
+    margin: 0 0 15px;
+    color: $admin-heading-color;
+}
+
+/* This can be changed */
+@mixin adminQodefH5Style() {
+    font-size: 14px;
+    line-height: 1.1em;
+    font-weight: 400;
+    font-family: $admin-heading-font;
+    margin: 0 0 15px;
+    color: $admin-heading-color;
+}
+
+@mixin adminQodefH6Style() {
+    font-size: 12px;
+    line-height: 1.3em;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: $admin-heading-font;
+    margin: 0 0 28px;
+    color: $admin-heading-color;
+}
+
+@mixin adminQodefPlaceholder {
+    &::placeholder {
+        @content;
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   Font mixins - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Button mixins - start
+   ========================================================================== */
+
+@mixin adminQodefButtonDefaultStyle() {
+    position: relative;
+    vertical-align: middle;
+    width: auto;
+    margin: 0;
+    font-family: $admin-heading-font;
+    font-size: 12px;
+    line-height: 2em;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 30px;
+    letter-spacing: 0.13em;
+    outline: none;
+    box-sizing: border-box;
+    transition: color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: none;
+    display: inline-block;
+}
+
+@mixin adminQodefButtonSize($size: normal) {
+
+    @if ($size == 'small') {
+        padding: 5px 34px;
+
+    } @else if ($size == 'normal') {
+        padding: 9px 30px;
+
+    } @else if ($size == 'large') {
+        padding: 8px 42px;
+    } @else if ($size == 'full-width') {
+        width: 100%;
+        padding: 8px 20px;
+        text-align: center;
+    }
+}
+
+@mixin adminQodefButtonFilledColor($important: null) {
+    color: #fff $important;
+    background-color: $admin-main-color $important;
+    border: 1px solid transparent $important;
+}
+
+@mixin adminQodefButtonFilledHoverColor($important: null) {
+    color: #fff $important;
+    background-color: $admin-hover-color2 $important;
+}
+
+@mixin adminQodefButtonOutlinedColor($important: null) {
+    color: $admin-heading-color $important;
+    background-color: transparent $important;
+    border: 1px solid #dedee1 $important;
+}
+
+@mixin adminQodefButtonOutlinedHoverColor($important: null) {
+    color: $admin-heading-color $important;
+    background-color: #fff $important;
+    border-color: $admin-hover-color1 $important;
+}
+
+/* ==========================================================================
+   Button mixins - end
+   ========================================================================== */
+
+/* ==========================================================================
+   Animation keyframes - begin
+   ========================================================================== */
+
+@keyframes qode-spin {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(359deg)
+    }
+}
+
+/* ==========================================================================
+   Animation keyframes - end
+   ========================================================================== */

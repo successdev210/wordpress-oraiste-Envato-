@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Vertical Sliding Menu Opener styles
+   ========================================================================== */
+
+.qodef-opener-icon {
+
+	&.qodef-vertical-sliding-menu-opener {
+		display: block;
+
+		.qodef-m-icon {
+			left: 50%;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+
+		&.qodef-source--predefined {
+
+			svg {
+				height: auto;
+				width: 29px;
+			}
+		}
+
+		&:focus {
+			color: var(--qode-link-color);
+		}
+	}
+}
+
+.qodef-vertical-sliding-menu--opened {
+
+	.qodef-vertical-sliding-menu-opener {
+
+		.qodef-m-icon {
+
+			&.qodef--open {
+				visibility: hidden;
+			}
+
+			&.qodef--close {
+				visibility: visible;
+			}
+		}
+	}
+}

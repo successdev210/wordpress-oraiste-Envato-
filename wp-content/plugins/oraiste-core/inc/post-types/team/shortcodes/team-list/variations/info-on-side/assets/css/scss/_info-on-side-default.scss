@@ -1,0 +1,53 @@
+/* ==========================================================================
+   Team List shortcode variation styles
+   ========================================================================== */
+
+.qodef-team-list {
+
+	&.qodef-item-layout--info-on-side {
+
+		.qodef-e-inner {
+			display: flex;
+			padding-bottom: 85px;
+		}
+
+		.qodef-e-image {
+			flex: 0 1 280px;
+		}
+
+		.qodef-e-content {
+			display: flex;
+			flex: 1 1 50%;
+			flex-direction: column;
+			margin-left: 20px;
+		}
+
+		.qodef-e-title {
+			line-height: 1;
+			margin: -3px 0 8px;
+		}
+
+		.qodef-e-description {
+			margin: 20px 0 36px;
+		}
+
+		.qodef-team-member-social-networks {
+			display: flex;
+
+			a {
+				@include qodefAdditionalText($color: var(--qode-link-color));
+
+				margin-right: 16px;
+				transition: $color-transition;
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				&:hover {
+					color: var(--qode-main-color);
+				}
+			}
+		}
+	}
+}

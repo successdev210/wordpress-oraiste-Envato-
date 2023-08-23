@@ -1,0 +1,98 @@
+/*  color picker - start  */
+.wp-picker-container {
+    position: relative;
+
+    .wp-picker-open + .wp-picker-input-wrap {
+        display: table;
+    }
+
+    .wp-color-result {
+        height: 35px;
+        margin: 0 0 6px 0;
+        padding: 0 0 0 30px;
+        font-size: 11px;
+        border: 1px solid $admin-input-fields-border-color;
+        background-image: none !important;
+        background-color: $admin-input-fields-background-color !important;
+        border-radius: 30px;
+        box-shadow: none;
+        transition: $admin-border-color-transition;
+
+        &:hover {
+            border-color: $admin-hover-color1;
+        }
+
+        .wp-color-result-text {
+            border-radius: 0 30px 30px 0;
+            background-color: $admin-input-fields-background-color;
+            border-left: 0;
+            padding: 0 20px 0 15px;
+            font-family: $admin-heading-font;
+            font-size: #{$admin-input-fields-text-size}px;
+            color: $admin-heading-color;
+        }
+
+        .color-alpha {
+            width: 29px !important;
+            height: 29px !important;
+            top: 2px !important;
+            left: 3px !important;
+            border-radius: 30px !important;
+            border: 1px solid $admin-input-fields-border-color;
+        }
+    }
+
+    .wp-picker-input-wrap {
+        position: absolute;
+        top: 40px;
+        left: 0;
+
+        label {
+            margin: 0;
+        }
+
+        input[type=text].wp-color-picker {
+            font-family: $admin-heading-font;
+            font-size: #{$admin-input-fields-text-size}px;
+            color: $admin-heading-color;
+            background-color: $admin-input-fields-background-color;
+            border: 1px solid $admin-input-fields-border-color;
+            border-radius: 30px;
+            height: 35px;
+            padding: 0 0 0 15px;
+            font-weight: 400;
+            min-width: 200px;
+        }
+
+        input.button.wp-picker-clear {
+            position: absolute;
+            right: 5px;
+            top: 0;
+            height: 100%;
+            background-color: transparent;
+            border: 0;
+            box-shadow: none;
+            font-family: $admin-heading-font;
+            margin-left: 0;
+            padding: 0 10px;
+        }
+    }
+
+    .wp-picker-holder {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        z-index: 1000;
+        box-sizing: initial;
+
+        * {
+            box-sizing: initial;
+        }
+
+        .iris-picker-inner {
+            right: 9px;
+        }
+    }
+}
+
+/*  color picker - end  */

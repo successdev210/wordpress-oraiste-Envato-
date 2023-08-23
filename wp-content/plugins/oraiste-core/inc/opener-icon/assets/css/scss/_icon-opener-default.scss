@@ -1,0 +1,122 @@
+/* ==========================================================================
+   Opener icon styles
+   ========================================================================== */
+
+.qodef-opener-icon {
+	display: inline-block;
+	line-height: 1;
+	position: relative;
+	vertical-align: middle;
+
+	.qodef-m-icon {
+		position: relative;
+		visibility: visible;
+
+		&.qodef--open {
+			color: var(--qode-heading-color);
+		}
+
+		&.qodef--close {
+			left: 0;
+			position: absolute;
+			top: 0;
+			visibility: hidden;
+		}
+	}
+
+	&.qodef-source--icon-pack {
+		font-size: 35px;
+
+		* {
+			display: inline-block;
+			line-height: inherit;
+
+			&:before {
+				display: inline-block;
+				line-height: inherit;
+			}
+		}
+	}
+
+	&.qodef-source--svg-path {
+
+		span {
+			position: relative;
+
+			> * {
+				vertical-align: middle;
+			}
+
+			> *,
+			path {
+				fill: currentColor;
+				stroke: currentColor;
+			}
+		}
+	}
+
+	&.qodef-source--predefined {
+
+		svg {
+			fill: none;
+			stroke: currentColor;
+			stroke-width: 1;
+		}
+
+		.qodef--close {
+
+			svg {
+				stroke-width: 2;
+			}
+		}
+
+
+		.qodef--open {
+
+			svg {
+
+				line {
+					transform: scaleX(1);
+				}
+			}
+
+			&:hover {
+
+				svg {
+
+					line {
+						animation: qodef-opener-line-draw .6s;
+
+						&:nth-of-type(2) {
+							animation-delay: .15s;
+						}
+					}
+				}
+			}
+		}
+
+		.qodef--close {
+
+			svg {
+				line {
+					clip-path: inset(0 0 0 0);
+					backface-visibility: hidden;
+				}
+			}
+
+			&:hover {
+
+				svg {
+
+					line {
+						animation: qodef-closer-line-draw .6s;
+
+						&:nth-of-type(2) {
+							animation-delay: .17s;
+						}
+					}
+				}
+			}
+		}
+	}
+}

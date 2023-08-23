@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Social Icons Group widget static style start
+   ========================================================================== */
+
+.qodef-social-icons-group {
+
+	.qodef-icon-holder {
+		margin-right: 9px;
+
+		a {
+			transition: $color-transition;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+/* ==========================================================================
+   Social Icons Group widget variable style start
+   ========================================================================== */
+
+@import '../../../../../../../../themes/oraiste/assets/css/scss/widgets-map';
+
+$local-widgets-area-map: (
+	'':(
+		link-color: var(--qode-background-color),
+		link-hover-color: var(--qode-background-color),
+		icon-background-color: var(--qode-main-color),
+		icon-background-hover-color: var(--qode-heading-color),
+	),
+);
+
+$local-widgets-area-map-merged: non-destructive-map-merge($wp-widgets-area-map, $local-widgets-area-map);
+
+@each $key, $values in $local-widgets-area-map-merged {
+	#{$key} .widget {
+		&.widget_oraiste_core_social_icons_group {
+
+			.qodef-icon-holder {
+
+				a {
+					@if (map-get($local-widgets-area-map-merged, 'link-color') != null) {
+						color: map-get($local-widgets-area-map-merged, 'link-color');
+					}
+				}
+
+				&.qodef-layout--circle,
+				&.qodef-layout--square {
+					@if (map-get($local-widgets-area-map-merged, 'link-color') != null) {
+						background-color: map-get($local-widgets-area-map-merged, 'icon-background-color');
+					}
+
+					&:hover {
+						@if (map-get($local-widgets-area-map-merged, 'link-color') != null) {
+							color: map-get($local-widgets-area-map-merged, 'icon-background-hover-color');
+						}
+
+						a {
+							@if (map-get($local-widgets-area-map-merged, 'link-hover-color') != null) {
+								color: map-get($local-widgets-area-map-merged, 'link-hover-color');
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

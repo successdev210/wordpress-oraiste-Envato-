@@ -1,0 +1,16 @@
+.qodef-image-gallery {
+
+	&.qodef-swiper--auto-width {
+
+		height: 400px;
+
+		.qodef-e {
+			width: auto !important;
+
+			img {
+				height: 100%;
+				width: auto;
+			}
+		}
+	}
+}

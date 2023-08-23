@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Blog List Info on Image styles
+   ========================================================================== */
+
+.qodef-blog {
+
+	&.qodef-item-layout--info-on-image {
+
+		article {
+
+			.qodef-e {
+
+				&-inner {
+					display: grid;
+					grid-template-areas: "info-on-image";
+					backface-visibility: hidden;
+				}
+
+				&-content {
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-end;
+					padding: 23px 25px 23px 25px;
+					grid-area: info-on-image;
+
+					&:before {
+						@include qodefAbsoluteLayout();
+						background-color: var(--qode-background-color);
+						content: '';
+						opacity: 0;
+						transition: $opacity-transition;
+					}
+
+					> * {
+						z-index: 1;
+					}
+				}
+
+				&-media {
+
+					&-image {
+						grid-area: info-on-image;
+					}
+
+					> * {
+						margin-bottom: 0;
+					}
+				}
+
+				&-title {
+					margin: 0;
+				}
+			}
+
+			&:hover {
+				.qodef-e-content:before {
+					opacity: .3;
+				}
+			}
+		}
+	}
+
+	.qodef-e {
+		&.qodef--has-appear {
+			@include qodefSkewAppearHidden(.1s);
+
+			&.qodef--appear {
+				@include qodefSkewAppearVisible();
+			}
+		}
+	}
+}

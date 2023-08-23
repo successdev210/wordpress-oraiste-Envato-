@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+	
+	&.qodef-layout--rotating-cubes {
+		
+		.qodef-m-cubes {
+			position: relative;
+			width: 32px;
+			height: 32px;
+			margin: -16px 0 0 -16px;
+		}
+		
+		.qodef-m-cube {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 10px;
+			height: 10px;
+			background-color: currentColor;
+			animation: qode-rotating-cubes 1.8s infinite ease-in-out;
+			
+			&.qodef-cube--2 {
+				animation-delay: -0.9s;
+			}
+		}
+	}
+}

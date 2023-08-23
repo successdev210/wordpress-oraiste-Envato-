@@ -1,0 +1,102 @@
+/* ==========================================================================
+   Instagram List shortcode responsive styles
+   ========================================================================== */
+.qodef-twitter-list {
+	&.qodef-responsive--predefined {
+		
+		@each $key, $values in $grid-columns-layout-responsive-map {
+			
+			@media only screen and (max-width: map-deep-get($grid-columns-layout-responsive-map, $key, 'responsive-stage')) {
+				
+				@each $column in map-deep-get($grid-columns-layout-responsive-map, $key, 'columns-label') {
+					
+					&.qodef-col-num--#{$column} {
+						$responsive-break: map-deep-get($grid-columns-layout-responsive-map, $key, 'responsive-break');
+						$column-size: map-deep-get($grid-columns-layout-responsive-map, $key, 'columns-size');
+						$column-width: 100% / $column-size;
+						
+						&.qodef-layout--columns {
+							
+							#ctf .ctf-tweets > .ctf-item {
+								width: $column-width;
+								
+								@if ($responsive-break != 0) {
+									
+									@media only screen and (min-width: $responsive-break) {
+										
+										&:nth-child(#{$column-size}n+1) {
+											clear: both;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.qodef-responsive--custom {
+		
+		@each $key, $values in $grid-columns-layout-custom-responsive-map {
+			
+			@media only screen and (max-width: map-deep-get($grid-columns-layout-custom-responsive-map, $key, 'responsive-stage')) {
+				
+				@for $j from 0 to $grid-columns-layout-size {
+					$step: $j + 1;
+					
+					$responsive-break: map-deep-get($grid-columns-layout-custom-responsive-map, $key, 'responsive-break');
+					$columns-label: map-deep-get($grid-columns-layout-custom-responsive-map, $key, 'columns-label');
+					$column-width: 100% / $step;
+					
+					&.qodef-col-num--#{$columns-label}--#{$step} {
+						
+						&.qodef-layout--columns {
+							
+							#ctf .ctf-tweets > .ctf-item {
+								
+								@media only screen and (min-width: $responsive-break) {
+									width: $column-width;
+									
+									@if ($responsive-break != 0 and $step > 1) {
+										
+										&:nth-child(#{$step}n+1) {
+											clear: both;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@include qodefScreenSize1440 {
+		
+		@for $i from 0 to length($grid-columns-gutter-responsive-label) {
+			&.qodef-gutter--#{nth($grid-columns-gutter-responsive-label,$i+1)} {
+				$gutter-size: nth($grid-columns-gutter-responsive-size, $i+1);
+				$gutter-double-size: $gutter-size * 2;
+				
+				&.qodef--no-bottom-space {
+					margin-bottom: -#{$gutter-double-size}px;
+				}
+				
+				#ctf {
+					.ctf-tweets {
+						margin: 0 -#{$gutter-size}px;
+						
+						> .ctf-item {
+							padding: 0 #{$gutter-size}px;
+							margin: 0 0 #{$gutter-double-size}px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Instagram List shortcode responsive styles
+   ========================================================================== */

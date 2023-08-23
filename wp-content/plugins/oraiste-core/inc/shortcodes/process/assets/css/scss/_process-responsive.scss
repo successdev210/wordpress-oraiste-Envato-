@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Process shortcode styles
+   ========================================================================== */
+
+.qodef-process {
+
+	.qodef-e {
+
+		@include qodefScreenSize680() {
+
+			&-inner {
+				grid-template-rows: 1fr minmax(0, min-content);
+				grid-template-columns: minmax(122px, min-content) 102px;
+			}
+
+			&-title {
+				margin: 0;
+			}
+
+			&-image {
+				display: block;
+				opacity: 1;
+
+				svg {
+
+					path {
+						stroke-dashoffset: 0;
+					}
+				}
+			}
+		}
+	}
+}

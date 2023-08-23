@@ -1,0 +1,65 @@
+
+.qodef-interactive-portfolio-list {
+
+	&.qodef-item-layout--numbered-list {
+
+		.qodef-e {
+			border-top: 1px solid var(--qode-additional-border-color);
+
+			&-media-image {
+				@include qodefSkewAppearHidden(0s);
+			}
+
+			&:last-child {
+				border-bottom: 1px solid var(--qode-additional-border-color);
+			}
+
+			&-content {
+				align-items: center;
+				display: flex;
+				padding: 15px 0;
+			}
+
+			&-number {
+				width: 50px;
+			}
+
+			&-title {
+
+				a {
+					@include qodefTypographyLayout();
+				}
+			}
+
+			&-info-category {
+				margin-left: auto;
+				z-index: 1;
+			}
+
+			&-image {
+				height: auto;
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 25%;
+				z-index: 1;
+			}
+
+			&.qodef--active {
+
+				.qodef-e {
+
+					&-title {
+						color: var(--qode-main-color);
+						z-index: 2;
+					}
+
+					&-media-image {
+						@include qodefSkewAppearVisible();
+					}
+				}
+			}
+		}
+	}
+}

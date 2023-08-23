@@ -1,0 +1,110 @@
+.qodef-portfolio-showcase {
+
+	@include qodefScreenSize1600() {
+
+		$size: 80px;
+
+		.qodef-e {
+
+			&-text {
+				font-size: $size;
+
+				&.qodef--highlight {
+
+					svg {
+						height: $size * 1.289;
+						top: -#{$size / 3.428};
+					}
+				}
+			}
+
+			&-image {
+				height: $size / 1.276;
+				margin-top: -#{$size / 30};
+
+				a,
+				img {
+					height: $size / 1.276;
+				}
+			}
+		}
+	}
+
+	@include qodefScreenSize1440() {
+
+		$size: 70px;
+
+		.qodef-e {
+
+			&-text {
+				font-size: $size;
+
+				&.qodef--highlight {
+
+					svg {
+						height: $size * 1.289;
+						top: -#{$size / 3.428};
+					}
+				}
+			}
+
+			&-image {
+				height: $size / 1.276;
+				margin-top: -#{$size / 30};
+
+				a,
+				img {
+					height: $size / 1.276;
+				}
+			}
+		}
+	}
+
+	@include qodefScreenSize1366() {
+
+		.qodef-e {
+
+			&-text,
+			&-image {
+				margin: 0 20px 0 0;
+			}
+		}
+	}
+
+	@include qodefScreenSize680() {
+
+		$size: 60px;
+
+		.qodef-e {
+
+			&-text,
+			&-image {
+				margin: 0 5px 0 5px;
+				padding: 0 10px 0 10px;
+			}
+
+			&-text {
+				font-size: $size;
+				line-height: 1em !important;
+
+				&.qodef--highlight {
+
+					svg {
+						height: $size * 1.289;
+						top: -#{$size / 3.428};
+					}
+				}
+			}
+
+			&-image {
+				height: $size / 1.276;
+				margin-top: -#{$size / 30};
+
+				a,
+				img {
+					height: $size / 1.276;
+				}
+			}
+		}
+	}
+}

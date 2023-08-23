@@ -1,0 +1,102 @@
+/* ==========================================================================
+   Image With Text shortcode styles
+   ========================================================================== */
+
+.qodef-image-with-text {
+	@include qodefRelativeLayout();
+
+	text-align: center;
+
+	.qodef-m {
+
+		&-image {
+			@include qodefRelativeLayout();
+
+			@at-root .qodef-shadow--on#{&} {
+				box-shadow: $box-shadow;
+			}
+
+			a,
+			img {
+				display: block;
+			}
+		}
+
+		&-content {
+			@include qodefRelativeLayout();
+		}
+
+		&-title {
+			margin: 12px 0 0 0;
+
+			a {
+
+				&:hover {
+					color: var(--qode-main-color);
+				}
+
+				&:focus {
+					color: var(--qode-link-color);
+				}
+			}
+		}
+
+		&-text {
+			margin: 12px 0 0 0;
+		}
+	}
+
+	&.qodef-image-action--scrolling-image {
+
+		.qodef-m-image-inner-holder {
+			position: relative;
+
+			.qodef-m-image {
+				@include qodefAbsoluteLayout();
+
+				//box-shadow: $box-shadow;
+				overflow: hidden;
+
+				a {
+					@include qodefAbsoluteLayout();
+
+					z-index: 100;
+				}
+			}
+
+			.qodef-m-iwt-frame {
+				vertical-align: middle;
+			}
+		}
+
+		&.qodef-scrolling-direction--vertical {
+
+			.qodef-m-image {
+
+				img {
+					width: 100%;
+				}
+			}
+		}
+
+		&.qodef-scrolling-direction--horizontal {
+
+			.qodef-m-image {
+
+				img {
+					height: 100%;
+					max-width: unset;
+					width: auto;
+				}
+			}
+		}
+	}
+
+	&.qodef--has-appear {
+		@include qodefSkewAppearHidden(0s);
+
+		&.qodef--appear {
+			@include qodefSkewAppearVisible();
+		}
+	}
+}

@@ -1,0 +1,88 @@
+@import '../../../../../../../../themes/oraiste/assets/css/scss/variables';
+@import '../../../../../../../../themes/oraiste/assets/css/scss/_grid-variables';
+@import '../../../../../../../../themes/oraiste/assets/css/scss/mixins';
+
+section.qodef-elementor-content-grid {
+    
+    > .elementor-container {
+        width: $content-grid-width-1100;
+        margin: 0 auto;
+    }
+    
+    &.qodef-extended-grid {
+    
+        > .elementor-container {
+            width: 100% !important; // important is require in order to override responsive width
+            max-width: 100% !important; // important is require in order to override responsive width
+            margin: 0;
+        }
+    }
+    
+    &.qodef-extended-grid--right {
+    
+        > .elementor-container {
+            padding-left: calc((100% - #{$content-grid-width-1100})/2);
+        }
+    }
+    
+    &.qodef-extended-grid--left {
+    
+        > .elementor-container {
+            padding-right: calc((100% - #{$content-grid-width-1100})/2);
+        }
+    }
+
+    // Global grid style
+    @each $key, $values in $content-grid-width-map {
+
+        @media only screen and (min-width: map-deep-get($content-grid-width-map, $key, 'responsive-break')) {
+
+            .qodef-content-grid-#{$key} & {
+    
+                > .elementor-container {
+                    width: map-deep-get($content-grid-width-map, $key, 'content-grid-width');
+                    max-width: map-deep-get($content-grid-width-map, $key, 'content-grid-width');
+                }
+    
+                &.qodef-extended-grid--right {
+    
+                    > .elementor-container {
+                        padding-left: calc((100% - #{map-deep-get($content-grid-width-map, $key, 'content-grid-width')})/2);
+                    }
+                }
+    
+                &.qodef-extended-grid--left {
+                    
+                    > .elementor-container {
+                        padding-right: calc((100% - #{map-deep-get($content-grid-width-map, $key, 'content-grid-width')})/2);
+                    }
+                }
+            }
+        }
+    }
+    
+    // Global grid responsive style
+    @each $key, $values in $content-grid-width-responsive-map {
+        
+        @media only screen and (max-width: map-deep-get($content-grid-width-responsive-map, $key, 'responsive-break')) {
+    
+            > .elementor-container {
+                width: map-deep-get($content-grid-width-responsive-map, $key, 'content-grid-width');
+            }
+    
+            &.qodef-extended-grid--right {
+    
+                > .elementor-container {
+                    padding-left: calc((100% - #{map-deep-get($content-grid-width-responsive-map, $key, 'content-grid-width')})/2);
+                }
+            }
+    
+            &.qodef-extended-grid--left {
+    
+                > .elementor-container {
+                    padding-right: calc((100% - #{map-deep-get($content-grid-width-responsive-map, $key, 'content-grid-width')})/2);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,51 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+	
+	&.qodef-layout--clock {
+		
+		.qodef-m-clock {
+			position: relative;
+			width: 50px;
+			height: 50px;
+			margin: -25px 0 0 -25px;
+			animation: qode-clock 8s infinite steps(8);
+		}
+		
+		.qodef-m-clock-item {
+			position: absolute;
+			height: 50px;
+			width: 50px;
+			
+			&:before {
+				content: '';
+				position: absolute;
+				height: 18.31501832px;
+				width: 18.31501832px;
+				background: currentColor;
+				border-radius: 50%;
+			}
+			
+			&.qodef-clock--1 {
+				transform: rotate(-135deg);
+				animation: qode-clock-1 1s ease-in infinite;
+			}
+			
+			&.qodef-clock--2 {
+				transform: rotate(-90deg);
+				animation: qode-clock-2 1s ease-in infinite;
+			}
+			
+			&.qodef-clock--3 {
+				transform: rotate(-45deg);
+				animation: qode-clock-3 1s ease-in infinite;
+			}
+			
+			&.qodef-clock--4 {
+				animation: qode-clock-4 1s ease-in infinite;
+			}
+		}
+	}
+}

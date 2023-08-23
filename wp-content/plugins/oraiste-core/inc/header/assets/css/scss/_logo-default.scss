@@ -1,0 +1,186 @@
+/* ==========================================================================
+# Logo default style
+========================================================================== */
+
+#qodef-page-header {
+
+	.qodef-header-logo-link {
+
+		img {
+
+			&.qodef--light {
+				opacity: 1;
+			}
+
+			&.qodef--beige,
+			&.qodef--dark,
+			&.qodef--orange {
+				opacity: 0;
+			}
+
+			&:not(.qodef--light):not(.qodef--sticky) {
+				//&:not(.qodef--sticky) {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+			}
+		}
+	}
+}
+
+// page skin
+.qodef-color-skin--beige {
+
+	#qodef-page-header {
+
+		.qodef-header-logo-link {
+
+			img {
+
+				&.qodef--beige {
+					opacity: 1;
+				}
+
+				&.qodef--light,
+				&.qodef--dark,
+				&.qodef--orange {
+					opacity: 0;
+				}
+			}
+		}
+	}
+}
+
+.qodef-color-skin--dark {
+
+	#qodef-page-header {
+
+		.qodef-header-logo-link {
+
+			img {
+
+				&.qodef--dark {
+					opacity: 1;
+				}
+
+				&.qodef--light,
+				&.qodef--beige,
+				&.qodef--orange {
+					opacity: 0;
+				}
+			}
+		}
+	}
+}
+
+.qodef-color-skin--orange {
+
+	#qodef-page-header {
+
+		.qodef-header-logo-link {
+
+			img {
+
+				&.qodef--orange {
+					opacity: 1;
+				}
+
+				&.qodef--light,
+				&.qodef--beige,
+				&.qodef--dark {
+					opacity: 0;
+				}
+			}
+		}
+	}
+}
+
+// header skin
+.qodef-color-skin--light {
+
+	&#qodef-page-header-inner {
+
+		.qodef-header-logo-link {
+
+			img {
+
+				&.qodef--beige {
+					opacity: 1 !important;
+				}
+
+				&.qodef--light,
+				&.qodef--dark,
+				&.qodef--orange {
+					opacity: 0 !important;
+				}
+			}
+		}
+	}
+}
+
+.qodef-color-skin--beige {
+
+	&#qodef-page-header-inner {
+
+		.qodef-header-logo-link {
+
+			img {
+
+				&.qodef--beige {
+					opacity: 1 !important;
+				}
+
+				&.qodef--light,
+				&.qodef--dark,
+				&.qodef--orange {
+					opacity: 0 !important;
+				}
+			}
+		}
+	}
+}
+
+.qodef-color-skin--dark {
+
+	&#qodef-page-header-inner {
+
+		.qodef-header-logo-link {
+
+			img {
+
+				&.qodef--dark {
+					opacity: 1 !important;
+				}
+
+				&.qodef--light,
+				&.qodef--beige,
+				&.qodef--orange {
+					opacity: 0 !important;
+				}
+			}
+		}
+	}
+}
+
+.qodef-color-skin--orange {
+
+	&#qodef-page-header-inner {
+
+		.qodef-header-logo-link {
+
+			img {
+
+				&.qodef--orange {
+					opacity: 1 !important;
+				}
+
+				&.qodef--light,
+				&.qodef--beige,
+				&.qodef--dark {
+					opacity: 0 !important;
+				}
+			}
+		}
+	}
+}

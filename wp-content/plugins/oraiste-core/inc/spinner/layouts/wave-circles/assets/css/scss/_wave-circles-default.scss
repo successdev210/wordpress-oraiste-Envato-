@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+	
+	&.qodef-layout--wave-circles {
+		
+		.qodef-m-wave-circles {
+			width: 150px;
+			height: 30px;
+			margin: -15px 0 0 -75px;
+		}
+		
+		.qodef-m-wave-circle {
+			float: left;
+			height: 30px;
+			width: 30px;
+			margin-right: 10px;
+			background: currentColor;
+			border-radius: 50%;
+			
+			&.qodef-wave--1 {
+				animation: qode-wave-jump-3 1.8s infinite ease-out;
+			}
+			
+			&.qodef-wave--2 {
+				animation: qode-wave-jump-2 1.8s infinite ease-out;
+			}
+			
+			&.qodef-wave--3 {
+				animation: qode-wave-jump-1 1.8s infinite ease-out;
+			}
+			
+			&.qodef-wave--4 {
+				margin-right: 0;
+				animation: qode-wave-wipe 1.8s infinite cubic-bezier(0.5, 0, 0.5, 1);
+			}
+		}
+	}
+}

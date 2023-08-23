@@ -1,0 +1,25 @@
+.form-table th,
+.form-table td {
+	box-sizing: border-box;
+}
+.qodef-page {
+	&.qodef-options-taxonomy {
+		.qodef-field-select {
+			label {
+				display: block;
+			}
+			select {
+				max-width: 100%;
+			}
+		}
+		.qodef-field-color .qodef-input-holder {
+			position: relative;
+		}
+		.qodef-field-color td {
+			position: relative;
+			.wp-picker-holder {
+				top: 40px;
+			}
+		}
+	}
+}

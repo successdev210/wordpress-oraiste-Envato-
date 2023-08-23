@@ -1,0 +1,9 @@
+.qodef-portfolio-list {
+
+	@include qodefScreenSize680() {
+
+		.qodef-e-inner {
+			margin: 0 !important;
+		}
+	}
+}

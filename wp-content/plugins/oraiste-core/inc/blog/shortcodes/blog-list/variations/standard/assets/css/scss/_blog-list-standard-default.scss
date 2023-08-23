@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Blog List Standard styles
+   ========================================================================== */
+
+.qodef-blog {
+
+	&.qodef-item-layout--standard {
+
+		&.qodef-col-num--1 {
+
+			article {
+
+				.qodef-e-info {
+
+					&.qodef-info--bottom {
+						margin-bottom: 23px;
+					}
+				}
+
+				&.format-link {
+
+					.qodef-e-link {
+						margin-bottom: 18px;
+					}
+				}
+
+				&.format-quote {
+
+					.qodef-e-quote {
+						margin-bottom: 18px;
+					}
+				}
+			}
+		}
+	}
+}

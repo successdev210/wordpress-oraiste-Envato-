@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Icon shortcode styles
+   ========================================================================== */
+
+.qodef-icon-holder {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	width: auto;
+	line-height: 1;
+	
+	a {
+		display: block;
+	}
+	
+	.qodef-icon {
+		display: block;
+		line-height: inherit;
+		
+		&:before {
+			display: block;
+			line-height: inherit;
+		}
+	}
+	
+	&.qodef-layout--circle,
+	&.qodef-layout--square {
+		width: 2em;
+		height: 2em;
+		line-height: 2em;
+		text-align: center;
+		color: var(--qode-background-color);
+		background-color: var(--qode-main-color);
+		transition: $color-transition, $background-color-transition, $border-color-transition;
+		
+		a {
+			color: inherit;
+			transition: none;
+		}
+		
+		&:hover {
+			background-color: var(--qode-heading-color);
+		}
+	}
+	
+	&.qodef-layout--circle {
+		border-radius: 50%;
+	}
+	
+	&.qodef-size--tiny {
+		font-size: 1.33333333em;
+	}
+	
+	&.qodef-size--small {
+		font-size: 2em;
+	}
+	
+	&.qodef-size--medium {
+		font-size: 3em;
+	}
+	
+	&.qodef-size--large {
+		font-size: 4em;;
+	}
+	
+	&.qodef-size--huge {
+		font-size: 5em;
+	}
+}

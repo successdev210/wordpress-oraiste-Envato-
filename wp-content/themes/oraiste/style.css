@@ -1,0 +1,47 @@
+/*
+Theme Name: Oraiste
+Theme URI: https://oraiste.qodeinteractive.com
+Description: A Contemporary Theme for Creative Business
+Author: Edge Themes
+Author URI: https://qodeinteractive.com
+Text Domain: oraiste
+Tags: one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-menu, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready
+Version: 1.0.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+.qodef-grid > .qodef-grid-inner{
+    display: flex !important;
+    flex-flow: wrap !important;
+    justify-content: flex-start !important;
+  }
+  .qodef-grid > .qodef-grid-inner > .qodef-grid-item > img{
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+.qodef-video-upload-btn {
+  color: #fff;
+    background-color: #ee2852;
+    border: 1px solid transparent;
+    margin-right: 10px;
+    position: relative;
+    vertical-align: middle;
+    width: auto;
+    margin: 0;
+    font-family: Heebo,sans-serif;
+    font-size: 12px;
+    line-height: 2em;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 30px;
+    letter-spacing: .13em;
+    outline: 0;
+    box-sizing: border-box;
+    transition: color .2s ease-in-out,background-color .2s ease-in-out,border-color .2s ease-in-out;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: none;
+    display: inline-block;
+    padding: 9px 30px;
+}

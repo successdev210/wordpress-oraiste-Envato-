@@ -1,0 +1,57 @@
+/* ==========================================================================
+# Sticky Header default style
+========================================================================== */
+
+$sticky-header-height: 70px;
+
+.qodef-header-sticky {
+	background-color: var(--qode-background-color);
+	height: $sticky-header-height;
+	left: 0;
+	position: fixed;
+	top: 0;
+	transform: translateY(-100%);
+	transition: transform 0.5s ease, top 0.5s ease;
+	width: 100%;
+	z-index: 100;
+
+	.qodef-header--sticky-display & {
+		transform: translateY(0%);
+	}
+
+	.admin-bar.qodef-header--sticky-display & {
+		top: 32px;
+	}
+}
+
+.qodef-header-sticky-inner {
+	align-items: center;
+	display: flex;
+	height: 100%;
+	justify-content: space-between;
+	padding: $full-width-side-padding;
+	position: relative;
+
+	&.qodef-content-grid {
+		padding: 0;
+	}
+
+	.qodef-header-standard--right & {
+
+		.qodef-header-logo-link {
+			margin-right: auto;
+		}
+	}
+
+	.qodef-header-standard--left & {
+		justify-content: flex-start;
+
+		.qodef-header-navigation {
+			margin-left: 20px;
+		}
+
+		.qodef-widget-holder {
+			margin-left: auto !important;
+		}
+	}
+}

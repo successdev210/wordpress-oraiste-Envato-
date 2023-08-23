@@ -1,0 +1,17 @@
+/*  radio group - start  */
+.qodef-radio-group-holder {
+	&.qodef-with-images input {
+		display: none;
+	}
+	
+	input[type="radio"] + img {
+		border: 2px solid transparent;
+		-webkit-transition: border-color 0.15s ease-in-out;
+		transition: border-color 0.15s ease-in-out;
+	}
+	
+	input[type="radio"]:checked + img {
+		border-color: $admin-main-color;
+	}
+}
+/*  radio group - end  */

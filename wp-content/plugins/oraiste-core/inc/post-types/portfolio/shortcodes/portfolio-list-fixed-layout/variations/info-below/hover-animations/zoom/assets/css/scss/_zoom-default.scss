@@ -1,0 +1,21 @@
+.qodef-portfolio-list-fixed-layout {
+	&.qodef-hover-animation--zoom {
+		.qodef-e {
+			.qodef-e-media-image {
+
+				img {
+					@include qodefZoomImg();
+				}
+			}
+
+			&:hover {
+				.qodef-e-media-image {
+
+					img {
+						transform: scale(1.05);
+					}
+				}
+			}
+		}
+	}
+}

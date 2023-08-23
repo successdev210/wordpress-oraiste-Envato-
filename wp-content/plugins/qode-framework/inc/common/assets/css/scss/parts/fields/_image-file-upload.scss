@@ -1,0 +1,73 @@
+/*  image/file upload - start  */
+.qodef-image-uploader {
+    display: flex;
+    align-items: center;
+
+    .qodef-single-image {
+        width: 100px;
+        margin-right: 20px;
+    }
+
+    .qodef-file-image {
+        width: 50px;
+        margin-right: 20px;
+    }
+
+    .qodef-file-name {
+        max-width: 100px;
+        margin-right: 20px;
+        word-wrap: break-word;
+    }
+
+    img {
+        width: 100%;
+        padding: 4px;
+        background-color: $admin-background-color;
+        border: 1px solid $admin-border-color;
+    }
+
+    ul {
+        list-style: none;
+        display: inline-block;
+        vertical-align: middle;
+
+        li {
+            float: left;
+            margin: 0 20px 20px 0;
+            width: 100px;
+        }
+    }
+
+    .qodef-image-upload-btn,
+    .qodef-image-remove-btn {
+        @include adminQodefButtonDefaultStyle();
+        @include adminQodefButtonSize();
+
+        &.qode-show {
+            display: block;
+        }
+
+        &.qodef-hide {
+            display: none;
+        }
+    }
+
+    .qodef-image-upload-btn {
+        @include adminQodefButtonFilledColor();
+        margin-right: 10px;
+
+        &:hover {
+            @include adminQodefButtonFilledHoverColor();
+        }
+    }
+
+    .qodef-image-remove-btn {
+        @include adminQodefButtonOutlinedColor();
+
+        &:hover {
+            @include adminQodefButtonOutlinedHoverColor();
+        }
+    }
+}
+
+/*  image/file upload - end  */

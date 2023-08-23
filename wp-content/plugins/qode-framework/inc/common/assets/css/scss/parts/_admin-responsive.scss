@@ -1,0 +1,118 @@
+.qodef-admin-page {
+
+    @media only screen and (max-width: 1024px) {
+        .qodef-admin-header {
+            display: block;
+            padding: 0 0 35px;
+            position: relative;
+            top: 0;
+
+            .qodef-header-left-inner {
+
+                > div {
+                    margin-right: 25px;
+                }
+            }
+
+            .qodef-header-right-inner {
+                justify-content: flex-start;
+            }
+        }
+
+        .qodef-admin-content {
+            display: block;
+            padding-top: 0;
+        }
+
+        .qodef-tabs-navigation-wrapper {
+            opacity: 1 !important;
+        }
+
+        .navbar-collapse {
+            overflow: hidden;
+            margin-bottom: -36px;
+            background-color: #fff;
+            z-index: 10;
+            position: relative;
+            border-bottom: 1px solid $admin-border-color;
+        }
+
+        ul.navbar-nav {
+            border-left: 0;
+            padding: 15px 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                margin: 0 0 16px 0;
+                flex: 0 0 33%;
+                line-height: 16px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                > span {
+
+                    &:before {
+                        left: 0;
+                        top: auto;
+                        bottom: 0;
+                        width: 100%;
+                        height: 1px;
+                        transform: none;
+                    }
+                }
+            }
+        }
+
+        .qodef-tabs-content {
+            margin-top: 0;
+            border-right: 1px solid #ebebeb;
+        }
+
+    }
+
+    @media only screen and (max-width: 680px) {
+        padding: 0 5px;
+
+        .qodef-admin-header {
+            .qodef-header-left-inner {
+                display: block;
+                margin-bottom: 25px;
+
+                > div {
+                    margin-right: 0;
+                }
+
+                .qodef-help-center-holder {
+                    position: absolute;
+                    top: 30px;
+                    right: 0;
+
+                    span {
+                        display: none;
+                    }
+                }
+
+                .qodef-search-holder {
+                    max-width: initial;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 380px) {
+
+        .qodef-admin-header {
+            .qodef-header-right-inner {
+                display: block;
+
+                .qodef-form-save-holder {
+                    margin: 0 0 25px 0;
+                }
+            }
+        }
+    }
+}

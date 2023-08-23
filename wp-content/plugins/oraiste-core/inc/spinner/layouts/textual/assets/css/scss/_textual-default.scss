@@ -1,0 +1,69 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+	&.qodef-layout--textual {
+		.qodef-m-inner {
+			.qodef-textual-spinner-text {
+				display: flex;
+				line-height: 1.2em;
+				overflow: hidden;
+				color: $text-color;
+				position: relative;
+				overflow: hidden;
+
+				&.qodef-appeared {
+					.qodef-textual-spinner-text-inner {
+						animation: qodef-animate-text-spinner .8s forwards;
+					}
+				}
+			}
+
+			.qodef-textual-spinner-text-inner {
+				opacity: 0;
+				transform-origin: top left;
+			}
+
+			.qodef-textual-spinner-svg-holder {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				align-items: center;
+				justify-content: center;
+				display: flex;
+			}
+
+			.qodef-textual-spinner-svg {
+				width: 165px;
+				height: 165px;
+				stroke-width: 1;
+				stroke-dashoffset: 250;
+				stroke-dasharray: 250;
+				transform: rotate(-125deg);
+
+				&.qodef-appeared {
+					animation: qodef-border-line-draw 1.3s ease-in-out forwards .3s;
+				}
+			}
+		}
+	}
+}
+
+@include keyframes(qodef-animate-text-spinner) {
+	0% {
+		opacity: 0;
+		transform: translateY(100%) translateZ(0) rotate(10deg) scaleY(1.2);
+	}
+
+	40%{
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateY(0%) translateZ(0) skewY(0deg) scaleY(1);
+		opacity: 1;
+	}
+}

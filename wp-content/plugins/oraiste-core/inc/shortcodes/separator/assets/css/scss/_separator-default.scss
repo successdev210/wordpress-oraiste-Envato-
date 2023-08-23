@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Separator shortcode styles
+   ========================================================================== */
+
+.qodef-separator {
+	font-size: 0;
+	height: auto;
+	line-height: 1;
+	position: relative;
+
+	.qodef-m-line {
+		@include qodefRelativeLayout();
+
+		border-bottom: 1px solid var(--qode-border-color);
+		margin: 10px 0;
+	}
+
+	&.qodef-position--center {
+		text-align: center;
+	}
+
+	&.qodef-position--left {
+		text-align: left;
+	}
+
+	&.qodef-position--right {
+		text-align: right;
+	}
+}

@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+	
+	&.qodef-layout--mitosis {
+		
+		.qodef-m-mitosis {
+			position: relative;
+			height: 50px;
+			width: 50px;
+			margin: -25px 0 0 -25px;
+			animation: qode-mitosis-invert 2s infinite steps(2, end);
+		}
+		
+		.qodef-m-mitosis-item {
+			@include qodefAbsoluteLayout();
+			background: currentColor;
+			border-radius: 50%;
+			
+			@for $i from 1 through 4 {
+				
+				&.qodef-mitosis--#{$i} {
+					animation: qode-mitosis-ball-#{$i} 1s infinite alternate linear;
+				}
+			}
+		}
+	}
+}

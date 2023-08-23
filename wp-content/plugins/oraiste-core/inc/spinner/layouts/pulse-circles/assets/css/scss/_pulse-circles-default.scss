@@ -1,0 +1,31 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+	
+	&.qodef-layout--pulse-circles {
+		
+		.qodef-m-pulse-circles {
+			position: relative;
+			width: 100px;
+			height: 100px;
+			margin: -50px 0 0 -50px;
+		}
+		
+		.qodef-m-pulse-circle {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background: currentColor;
+			border: 0 solid currentColor;
+			border-radius: 50%;
+			
+			@for $i from 1 through 4 {
+				&.qodef-pulse--#{$i} {
+					animation: qode-pulse-circles-pulse 3s infinite calc((#{$i* -750ms}) + 750ms);
+				}
+			}
+		}
+	}
+}

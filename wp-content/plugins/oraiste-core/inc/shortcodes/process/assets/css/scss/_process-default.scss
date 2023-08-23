@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Process shortcode styles
+   ========================================================================== */
+
+.qodef-process {
+
+	.qodef-e {
+
+		&-inner {
+			display: grid;
+			grid-template-areas: "subtitle image" "title title";
+			grid-template-columns: minmax(0, min-content) 102px;
+			grid-template-rows: 90px minmax(102px, min-content);
+		}
+
+		&-title {
+			align-self: start;
+			grid-area: title;
+			justify-self: start;
+			margin: 0 0 25px 0;
+		}
+
+		&-image {
+			align-self: center;
+			grid-area: image;
+			justify-self: center;
+			opacity: 0;
+			transition: $opacity-transition;
+
+			svg {
+
+				path {
+					stroke-dasharray: 851 994;
+					stroke-dashoffset: 992;
+				}
+			}
+		}
+
+		&-subtitle {
+			align-self: end;
+			grid-area: subtitle;
+			justify-self: start;
+			margin: 10px 25px 0 0;
+			white-space: nowrap;
+		}
+
+		&:hover,
+		&:focus,
+		&:active {
+
+			.qodef-e-image {
+				opacity: 1;
+
+				svg {
+
+					path {
+						animation: qodef-border-line-draw 1033ms ease-in-out 0s forwards;
+					}
+				}
+			}
+		}
+	}
+}

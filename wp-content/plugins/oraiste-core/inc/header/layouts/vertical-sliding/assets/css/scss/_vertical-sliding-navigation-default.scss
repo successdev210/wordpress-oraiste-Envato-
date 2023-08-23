@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Vertical Sliding navigation style
+   ========================================================================== */
+
+$menu-top-bottom-spacing: 10px 0 0 0;
+
+.qodef-header--vertical-sliding {
+
+	.qodef-header-vertical-sliding-navigation {
+		align-items: center;
+		display: flex;
+		height: 100%;
+		width: 100%;
+		z-index: 100;
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				margin: 0;
+				padding: 0;
+				position: relative;
+
+				a {
+
+					.qodef-menu-item-arrow {
+						display: none;
+					}
+				}
+
+				.qodef-drop-down-second {
+					transform: translateZ(0);
+				}
+
+				.qodef-drop-down-second-inner {
+					display: block;
+					padding: 0;
+					position: relative;
+					z-index: 997;
+				}
+
+				&.qodef--hide-link {
+
+					> a {
+						cursor: default;
+					}
+				}
+			}
+		}
+
+		.qodef-menu-item-icon {
+			margin-right: 5px;
+		}
+
+		.qodef-mega-menu-widget-holder {
+			display: none;
+		}
+
+		> ul {
+
+			> li {
+				margin: 18px 0;
+
+				> a {
+					@include qodefMenuLevelOneInitialStyle($heading: 'h1', $color: var(--qode-heading-color));
+
+
+					&:hover {
+						@include qodefMenuLevelOneHoverStyle($menu: 'vertical-sliding-menu');
+					}
+				}
+
+				&.current-menu-ancestor,
+				&.current-menu-item {
+
+					> a {
+						@include qodefMenuLevelOneHoverStyle($menu: 'vertical-sliding-menu');
+					}
+				}
+			}
+		}
+
+		.qodef-drop-down-second-inner {
+
+			> ul {
+				padding: $menu-top-bottom-spacing;
+			}
+
+			ul {
+
+				li {
+
+					> a {
+						@include qodefMenuLevelTwoInitialStyle();
+						@include qodefMenuLevelTwoInitialTypographyStyle($heading: 'h3', $color: var(--qode-heading-color), $line-height: 1.3em !important);
+
+						margin: 0;
+
+						&:hover {
+							@include qodefMenuLevelTwoHoverStyle($menu: 'vertical-sliding-menu');
+						}
+					}
+
+					&.current-menu-ancestor,
+					&.current-menu-item {
+
+						> a {
+							@include qodefMenuLevelTwoHoverStyle($menu: 'vertical-sliding-menu');
+						}
+					}
+				}
+			}
+		}
+
+		ul li {
+
+			.qodef-drop-down-second {
+				display: none;
+			}
+		}
+	}
+}

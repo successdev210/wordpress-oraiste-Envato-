@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Full Screen Menu styles
+   ========================================================================== */
+
+.qodef-fullscreen-menu {
+
+	@include qodefScreenSize1024() {
+
+		> ul {
+
+			> li {
+
+				> a {
+					font-size: 70px;
+					line-height: 0.8em;
+				}
+			}
+		}
+
+		.qodef-drop-down-second-inner {
+
+			ul {
+
+				li {
+
+					> a {
+						font-size: 25px;
+					}
+				}
+			}
+		}
+	}
+
+	@include qodefScreenSize480() {
+
+		> ul {
+
+			> li {
+
+				> a {
+					font-size: 55px;
+					line-height: 0.7em;
+				}
+			}
+		}
+	}
+}

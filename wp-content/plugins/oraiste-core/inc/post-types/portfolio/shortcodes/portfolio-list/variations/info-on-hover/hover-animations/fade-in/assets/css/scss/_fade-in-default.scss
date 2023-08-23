@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Portfolio List shortcode variation hover styles
+   ========================================================================== */
+
+.qodef-item-layout--info-on-hover.qodef-hover-animation--fade-in {
+
+	.qodef-e {
+
+		&-content {
+			opacity: 0;
+			transition: $opacity-transition;
+			backface-visibility: hidden;
+
+			&-inner {
+				&:before {
+					@include qodefAbsoluteLayout();
+
+					background-color: var(--qode-background-color);
+					content: '';
+					opacity: .7;
+				}
+			}
+		}
+
+		&-inner {
+
+			&:hover {
+
+				.qodef-e-content {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

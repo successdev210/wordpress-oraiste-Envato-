@@ -1,0 +1,5 @@
+.vc_shortcode-param[data-param_type=dropdown] select.wpb_vc_param_value,
+.vc_shortcode-param[data-param_type=dropdown] select.wpb_vc_param_value option {
+	font-family: "Open Sans", sans-serif;
+	font-size: 14px;
+}

@@ -1,0 +1,13 @@
+.qodef-background-text {
+
+	.qodef-m-background-text {
+
+		@include qodefScreenSize1440 {
+			font-size: 135px;
+		}
+
+		@include qodefScreenSize680 {
+			display: none !important;
+		}
+	}
+}

@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Single Post Navigation styles
+   ========================================================================== */
+
+#qodef-single-portfolio-navigation {
+	$distance: 13px;
+
+	@include qodefRelativeLayout();
+
+	margin: 53px 0 3px;
+
+	.qodef-m {
+
+		&-inner {
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+			position: relative;
+		}
+
+		&-nav {
+			align-items: center;
+			color: var(--qode-heading-color);
+			display: flex;
+			max-width: 100%;
+			position: relative;
+
+			&-holder {
+				display: flex;
+				width: calc(100% / 3);
+
+				&:nth-child(1) {
+					justify-content: flex-start;
+				}
+
+				&:nth-child(2) {
+					justify-content: center;
+				}
+
+				&:nth-child(3) {
+					justify-content: flex-end;
+				}
+			}
+
+			&-label {
+				@include qodefAdditionalText($color: inherit, $font-weight: $button-font-weight);
+			}
+
+			&-icon {
+				fill: none;
+				position: relative;
+				stroke: currentColor;
+				top: -1px;
+				width: 24px;
+			}
+
+			&.qodef--prev {
+				flex-direction: row-reverse;
+
+				.qodef-m-nav {
+
+					&-label {
+						margin-left: $distance;
+					}
+				}
+			}
+
+			&.qodef--back-link {
+				color: var(--qode-main-color);
+
+				&:hover {
+					color: var(--qode-link-hover-color);
+				}
+			}
+
+			&.qodef--next {
+
+				.qodef-m-nav {
+
+					&-label {
+						margin-right: $distance;
+					}
+				}
+			}
+
+			&:hover {
+				color: var(--qode-main-color);
+			}
+		}
+	}
+}

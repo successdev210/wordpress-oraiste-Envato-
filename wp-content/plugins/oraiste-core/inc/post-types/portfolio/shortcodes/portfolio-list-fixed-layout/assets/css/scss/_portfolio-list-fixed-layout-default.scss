@@ -1,0 +1,90 @@
+/* ==========================================================================
+   Portfolio List Fixed Layout shortcode styles
+   ========================================================================== */
+
+.qodef-portfolio-list-fixed-layout {
+
+	article {
+		display: flex !important;
+		margin-bottom: 110px !important; // override grid system
+
+		// huge horizontal
+		&:nth-of-type(5n) {
+			margin-top: 87px !important;
+			width: 100% !important;
+
+			.qodef-e-inner {
+				padding: 0 22.5% 0 23%;
+			}
+		}
+
+		// large horizontal
+		&:nth-of-type(5n+1),
+		&:nth-of-type(5n+4) {
+			width: 56% !important;
+		}
+
+		// small vertical
+		&:nth-of-type(5n+2),
+		&:nth-of-type(5n+3) {
+			width: 44% !important;
+
+			.qodef-e-inner {
+				padding: 8.5% 23% 0 31.5%;
+			}
+		}
+
+		// small horizontal
+		&:nth-of-type(10n+3) {
+			align-items: flex-end;
+
+			.qodef-e-inner {
+				padding: 0 16.5% 1.5% 11%;
+			}
+		}
+	}
+
+	.qodef-e {
+
+		&-inner {
+			width: 100%;
+		}
+
+		&-media {
+			overflow: hidden;
+
+			video,
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+
+		&-content {
+			margin-top: 22px;
+		}
+
+		&-title {
+			margin: 0;
+		}
+
+		&-info-category {
+			@include qodefAdditionalText();
+
+			a:not(:last-child) {
+
+				&:after {
+					color: var(--qode-additional-text-color);
+					content: "/";
+					margin: 0 2px 0 3px;
+				}
+			}
+		}
+
+		&.qodef--has-appear {
+			&:nth-of-type(2n+2){
+				transition-delay: .4s;
+			}
+		}
+	}
+}

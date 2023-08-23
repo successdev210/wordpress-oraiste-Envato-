@@ -1,0 +1,160 @@
+/* ==========================================================================
+   Full Screen Menu styles
+   ========================================================================== */
+.qodef-fs-menu-svg {
+	stroke-dashoffset: 1125;
+
+	.qodef-fullscreen-menu-animate--out & {
+		stroke-dashoffset: 0;
+	}
+
+	.qodef-fullscreen-menu-animate--in & {
+		animation: qodef-border-line-draw 1000ms ease-in-out 400ms forwards;
+	}
+}
+
+
+#qodef-fullscreen-area {
+	background-color: var(--qode-fullscreen-menu-background-color);
+	background-size: cover;
+	height: 100%;
+	left: 0;
+	overflow-x: hidden !important;
+	position: fixed;
+	top: 0;
+	visibility: hidden;
+	transition: transform .6s cubic-bezier(.77, 0, .175, 1), visibility .6s;
+	right: 100%;
+	transform: translateX(100%);
+	width: 100%;
+	z-index: 99; /* smaller than header, bigger than content */
+
+	.qodef-content-grid {
+		height: 100%;
+
+		.qodef-fullscreen-menu {
+			width: 100%;
+		}
+	}
+
+	.qodef-fullscreen-menu-animate--in & {
+		transform: translateX(0%);
+		visibility: visible;
+	}
+}
+
+#qodef-fullscreen-area-background {
+	@include qodefAbsoluteLayout();
+}
+
+#qodef-fullscreen-area-inner {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	width: 100%;
+}
+
+$menu-top-bottom-spacing: 16px 0 0 0;
+
+.qodef-fullscreen-menu {
+	margin: 0 auto;
+	position: relative;
+	text-align: left;
+	top: 0;
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin: 0;
+			padding: 0;
+			position: relative;
+
+			&.qodef--hide-link {
+
+				> a {
+					cursor: default;
+				}
+			}
+		}
+
+		&.sub-menu {
+			display: none;
+		}
+	}
+
+	.qodef-menu-item {
+
+		&-icon {
+			margin-right: 5px;
+		}
+
+		&-arrow {
+			display: none;
+		}
+	}
+
+	.qodef-mega-menu-widget-holder {
+		display: none;
+	}
+
+	> ul {
+
+		> li {
+			margin: 18px 0;
+
+			> a {
+				@include qodefMenuLevelOneInitialStyle($heading: 'h1', $color: var(--qode-fullscreen-menu-inactive-color));
+
+
+				&:hover {
+					@include qodefMenuLevelOneHoverStyle($menu: 'fullscreen-menu');
+				}
+			}
+
+			&.current-menu-ancestor,
+			&.current-menu-item {
+
+				> a {
+					@include qodefMenuLevelOneHoverStyle($menu: 'fullscreen-menu');
+				}
+			}
+		}
+	}
+
+	.qodef-drop-down-second-inner {
+
+		> ul {
+			padding: $menu-top-bottom-spacing;
+		}
+
+		ul {
+
+			li {
+
+				> a {
+					@include qodefMenuLevelTwoInitialStyle();
+					@include qodefMenuLevelTwoInitialTypographyStyle($heading: 'h3', $color: var(--qode-fullscreen-menu-inactive-color), $line-height: 1.3em !important);
+
+					margin: 0;
+
+					&:hover {
+						@include qodefMenuLevelTwoHoverStyle($menu: 'fullscreen-menu');
+					}
+				}
+
+				&.current-menu-ancestor,
+				&.current-menu-item {
+
+					> a {
+						@include qodefMenuLevelTwoHoverStyle($menu: 'fullscreen-menu');
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+/* ==========================================================================
+   King Composer global styles
+   ========================================================================== */
+
+.kc-elm.qodef-shortcode {
+	
+	.fa,
+	.fas {
+		font-family: 'Font Awesome 5 Free';
+		font-weight: 900;
+		
+		&:before {
+			font-family: inherit;
+			font-weight: inherit;
+		}
+	}
+	
+	.fab {
+		font-family: 'Font Awesome 5 Brands';
+		font-weight: 400;
+		
+		&:before {
+			font-family: inherit;
+			font-weight: inherit;
+		}
+	}
+}

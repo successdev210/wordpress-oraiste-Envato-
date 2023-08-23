@@ -1,0 +1,23 @@
+#qodef-page-spinner {
+	position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+	z-index: 999999;
+	
+	.qodef-m-inner {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		color: $main-color;
+		background-color: var(--qode-background-color);
+	}
+	
+	.qodef-m-spinner {
+		position: relative;
+	}
+}

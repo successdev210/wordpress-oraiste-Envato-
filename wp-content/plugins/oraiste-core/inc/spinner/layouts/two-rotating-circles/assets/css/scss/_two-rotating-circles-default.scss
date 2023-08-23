@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Spinner layout styles
+   ========================================================================== */
+
+#qodef-page-spinner {
+	
+	&.qodef-layout--two-rotating-circles {
+		
+		.qodef-m-two-rotating-circles {
+			position: relative;
+			width: 40px;
+			height: 40px;
+			margin: -20px 0 0 -20px;
+			text-align: center;
+			animation: qode-rotate-circles 2s infinite linear;
+		}
+		
+		.qodef-m-circle {
+			position: absolute;
+			top: 0;
+			width: 60%;
+			height: 60%;
+			display: inline-block;
+			background-color: currentColor;
+			border-radius: 100%;
+			transform-origin: center bottom;
+			animation: qode-bounce 2s infinite ease-in-out;
+			
+			&.qodef-circle--2 {
+				top: auto;
+				bottom: 0;
+				animation-delay: -1.0s;
+			}
+		}
+	}
+}

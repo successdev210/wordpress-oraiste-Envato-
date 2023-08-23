@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Contact Info widget static style start
+   ========================================================================== */
+
+.widget {
+
+    .qodef-contact-info-widget {
+        margin: 0;
+    }
+}
+
+/* ==========================================================================
+   Contact Info widget variable style start
+   ========================================================================== */
+
+$local-widgets-map: (
+        text-size: null,
+);
+
+$local-widgets-area-map: (
+        '': (),
+        '#qodef-top-area' : (
+                text-size: 16,
+        ),
+);
+
+@each $key, $values in $local-widgets-area-map {
+    $local-widgets-map-merged: map-merge($local-widgets-map, $values);
+
+    #{$key} .widget {
+
+        .qodef-contact-info-widget {
+
+            a {
+
+                @if (map-get($local-widgets-map-merged, 'text-size') != null) {
+                    font-size: #{map-get($local-widgets-map-merged, 'text-size')}px;
+                }
+            }
+        }
+    }
+}

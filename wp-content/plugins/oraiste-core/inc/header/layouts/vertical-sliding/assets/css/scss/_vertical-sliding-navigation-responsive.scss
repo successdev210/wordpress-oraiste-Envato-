@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Vertical Sliding navigation style
+   ========================================================================== */
+
+.qodef-header--vertical-sliding {
+
+	.qodef-header-vertical-sliding-navigation {
+
+		@include qodefScreenSize1366() {
+
+			> ul {
+
+				> li {
+
+					> a {
+						font-size: 70px;
+						line-height: 0.8em;
+					}
+				}
+			}
+		}
+	}
+}

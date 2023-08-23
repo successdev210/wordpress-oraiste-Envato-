@@ -1,0 +1,204 @@
+/* ==========================================================================
+   Vertical Sliding layout styles
+   ========================================================================== */
+
+$vertical-sliding-header-width--initial: 53px;
+$vertical-sliding-header-width--open: 575px;
+$vertical-sliding-header-padding--initial: 23px; // vertical
+$vertical-sliding-header-padding--open: 103px; // horizontal
+
+$vertical-sliding-content-grid-width-responsive-map: (
+	1400 : (
+		responsive-break: (
+			$screen-size-1367: $screen-size-1680,
+			$screen-size-1281: $screen-size-1366,
+			$screen-size-1025: $screen-size-1280,
+		),
+		content-grid-width: (
+			$content-grid-width-1100,
+			$content-grid-width-screen-size-1200,
+			$content-grid-width-screen-size-1024,
+		)
+	),
+	1300 : (
+		responsive-break: (
+			$screen-size-1367: $screen-size-1680,
+			$screen-size-1281: $screen-size-1366,
+			$screen-size-1025: $screen-size-1280,
+		),
+		content-grid-width: (
+			$content-grid-width-1100,
+			$content-grid-width-screen-size-1200,
+			$content-grid-width-screen-size-1024,
+		)
+	),
+	1200 : (
+		responsive-break: (
+			$screen-size-1367: $screen-size-1440,
+			$screen-size-1281: $screen-size-1366,
+			$screen-size-1025: $screen-size-1280,
+		),
+		content-grid-width: (
+			$content-grid-width-1100,
+			$content-grid-width-screen-size-1200,
+			$content-grid-width-screen-size-1024,
+		)
+	),
+	1100 : (
+		responsive-break: (
+			$screen-size-1281: $screen-size-1366,
+			$screen-size-1025: $screen-size-1280,
+		),
+		content-grid-width: (
+			$content-grid-width-screen-size-1200,
+			$content-grid-width-screen-size-1024,
+		)
+	)
+);
+
+.qodef-header--vertical-sliding {
+
+	.qodef-content-grid {
+		@each $key, $values in $vertical-sliding-content-grid-width-responsive-map {
+			$index: 1;
+
+			@each $responsive-key, $responsive-value in map-deep-get($vertical-sliding-content-grid-width-responsive-map, $key, 'responsive-break') {
+
+				@media only screen and (min-width: $responsive-key) and (max-width: $responsive-value) {
+
+					@at-root .qodef-content-grid-#{$key}#{&} {
+						width: #{nth(map-deep-get($vertical-sliding-content-grid-width-responsive-map, $key, 'content-grid-width'), $index)}
+					}
+				}
+
+				$index: $index + 1;
+			}
+		}
+	}
+
+	#qodef-page-header {
+		height: 100%;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: $vertical-sliding-header-width--initial;
+
+		.qodef-vertical-sliding-area {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			justify-content: center;
+		}
+
+		.qodef--static {
+			background-color: var(--qode-background-color);
+			border-right: 1px solid var(--qode-additional-border-color);
+			width: $vertical-sliding-header-width--initial;
+
+			.qodef-header-logo-link,
+			.qodef-widget-holder {
+				animation: qode-fade-in .25s $sliding-area-transition-time linear both;
+				transform: rotate(-90deg);
+			}
+
+			.qodef-header-logo-link {
+				height: $vertical-sliding-header-width--initial;
+				left: 0;
+				overflow: visible;
+				position: absolute;
+				top: calc(#{$vertical-sliding-header-padding--initial} + 10px);
+				width: $vertical-sliding-header-width--initial;
+
+				img {
+					left: unset;
+					max-width: unset;
+					position: absolute;
+					right: 0;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+
+			.qodef-widget-holder {
+				bottom: $vertical-sliding-header-padding--initial;
+				height: $vertical-sliding-header-width--initial;
+				left: 0;
+				margin: 0;
+				overflow: visible;
+				position: absolute;
+				white-space: nowrap;
+				width: $vertical-sliding-header-width--initial;
+			}
+		}
+
+		.qodef--dynamic {
+			background-color: var(--qode-background-color);
+			border-right: 1px solid var(--qode-additional-border-color);
+			left: -#{ $vertical-sliding-header-width--initial + $vertical-sliding-header-width--open};
+			padding: 38px $vertical-sliding-header-padding--open 15px #{$vertical-sliding-header-width--initial + $vertical-sliding-header-padding--open};
+			position: fixed;
+			top: 0;
+			transition: all .6s cubic-bezier(0.7, 0, 0.24, 0.99);
+			visibility: hidden;
+			width: $vertical-sliding-header-width--open;
+			z-index: -1;
+
+			.qodef-widget-holder {
+				height: auto;
+				left: #{$vertical-sliding-header-width--initial + $vertical-sliding-header-padding--open};
+				margin: 0;
+				position: absolute;
+				z-index: 101;
+
+				&.qodef--two {
+					top: $vertical-sliding-header-padding--initial;
+				}
+
+				&.qodef--three {
+					bottom: $vertical-sliding-header-padding--initial;
+					padding-left: 15px;
+
+					&:before {
+						$offset: 6px;
+
+						background-color: var(--qode-border-color);
+						content: '';
+						display: block;
+						height: calc(100% - #{$offset * 2});
+						left: 0;
+						position: absolute;
+						top: $offset;
+						width: 1px;
+					}
+				}
+			}
+		}
+	}
+
+	#qodef-page-header-inner {
+		padding: 0;
+	}
+
+	#qodef-page-header.qodef-vertical-sliding-menu--opened {
+
+		.qodef--dynamic {
+			left: 0;
+			visibility: visible;
+		}
+	}
+
+	&.admin-bar {
+
+		#qodef-page-header,
+		.qodef--dynamic {
+			height: calc(100% - 32px);
+			top: 32px;
+		}
+	}
+
+	#qodef-page-outer,
+	#qodef-page-footer {
+		padding-left: $vertical-sliding-header-width--initial;
+	}
+}

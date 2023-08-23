@@ -1,0 +1,120 @@
+/* ==========================================================================
+   Social Share widget styles
+   ========================================================================== */
+
+$wp-widgets-area-map: (
+	'#qodef-page-sidebar': (
+		text-color: null
+	),
+	'#qodef-page-footer': (
+		text-color: var(--qode-text-color)
+	),
+	'#qodef-side-area': (
+		text-color: var(--qode-text-color)
+	)
+);
+.qodef-social-share {
+
+	.widget & {
+
+		&.qodef-layout--list {
+
+			.qodef-social-title {
+				display: block;
+				margin-bottom: 21px;
+			}
+		}
+
+		&.qodef-layout--text {
+
+			.qodef-social-title {
+				display: block;
+				margin-bottom: 21px;
+			}
+		}
+	}
+
+	@each $key, $values in $wp-widgets-area-map {
+		#{$key} .widget & {
+
+			&.qodef-layout--dropdown {
+
+				.qodef-social-title {
+					color: map-get($values, 'text-color');
+				}
+			}
+
+			&.qodef-layout--list {
+
+				.qodef-social-title {
+					color: map-get($values, 'text-color');
+				}
+
+				li {
+
+					&.qodef-facebook-share a:hover {
+						color: #3b5998;
+					}
+
+					&.qodef-twitter-share a:hover {
+						color: #00aced;
+					}
+
+					&.qodef-linkedin-share a:hover {
+						color: #007bb5;
+					}
+
+					&.qodef-tumblr-share a:hover {
+						color: #32506d;
+					}
+
+					&.qodef-pinterest-share a:hover {
+						color: #cb2027;
+					}
+
+					&.qodef-vk-share a:hover {
+						color: #45668e;
+					}
+				}
+			}
+
+			&.qodef-layout--text {
+
+				.qodef-social-title {
+					color: map-get($values, 'text-color');
+				}
+
+				li {
+
+					&.qodef-facebook-share a:hover {
+						color: #3b5998;
+					}
+
+					&.qodef-twitter-share a:hover {
+						color: #00aced;
+					}
+
+					&.qodef-linkedin-share a:hover {
+						color: #007bb5;
+					}
+
+					&.qodef-tumblr-share a:hover {
+						color: #32506d;
+					}
+
+					&.qodef-pinterest-share a:hover {
+						color: #cb2027;
+					}
+
+					&.qodef-vk-share a:hover {
+						color: #45668e;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Social Share widget styles
+   ========================================================================== */

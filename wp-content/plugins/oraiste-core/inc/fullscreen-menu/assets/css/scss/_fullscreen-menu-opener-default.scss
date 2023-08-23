@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Full Screen Menu Opener styles
+   ========================================================================== */
+.qodef-fullscreen-menu-opener {
+	&.qodef-source--predefined {
+
+		svg {
+			height: auto;
+			width: 58px;
+		}
+	}
+
+	.qodef-m-icon {
+		&.qodef--close {
+			transition-delay: 0s;
+		}
+	}
+
+	.qodef-fullscreen-menu-animate--out &{
+		.qodef-m-icon {
+			&.qodef--close {
+				transition-delay: .2s;
+			}
+		}
+	}
+
+	.qodef-fullscreen-menu-animate--out &{
+		.qodef-m-icon {
+			&.qodef--close {
+				transition-delay: .36s;
+			}
+		}
+	}
+}
+
+.qodef-fullscreen-menu--opened {
+
+	.qodef-fullscreen-menu-opener {
+		color: var(--qode-main-color);
+
+		.qodef-m-icon {
+			visibility: hidden;
+
+			&.qodef--close {
+				visibility: visible;
+			}
+		}
+	}
+
+	#qodef-page-header,
+	#qodef-page-mobile-header {
+		visibility: hidden;
+	}
+
+	.qodef-header-logo-link,
+	.qodef-mobile-header-logo-link,
+	.qodef-header-logo-image.qodef--customizer,
+	.qodef-fullscreen-menu-opener {
+		visibility: visible;
+	}
+
+	&.qodef-color-skin--light {
+
+		#qodef-page-header {
+
+			.qodef-header-logo-link {
+
+				img {
+
+					&.qodef--dark {
+						opacity: 1 !important;
+						transition-delay: .35s;
+					}
+
+					&.qodef--light,
+					&.qodef-beige,
+					&.qodef--orange {
+						opacity: 0 !important;
+					}
+				}
+			}
+		}
+	}
+
+	&.qodef-color-skin--beige {
+
+		#qodef-page-header {
+
+			.qodef-header-logo-link {
+
+				img {
+
+					&.qodef--dark {
+						opacity: 1 !important;
+						transition-delay: .35s;
+					}
+
+					&.qodef--light,
+					&.qodef-beige,
+					&.qodef--orange {
+						opacity: 0 !important;
+					}
+				}
+			}
+		}
+	}
+
+	&.qodef-color-skin--orange {
+
+		#qodef-page-header {
+
+			.qodef-header-logo-link {
+
+				img {
+
+					&.qodef--light {
+						opacity: 1 !important;
+						transition-delay: .35s;
+					}
+
+					&.qodef-beige,
+					&.qodef--dark,
+					&.qodef--orange {
+						opacity: 0 !important;
+					}
+				}
+			}
+		}
+	}
+
+	&.qodef-color-skin--dark {
+
+		#qodef-page-header {
+
+			.qodef-header-logo-link {
+
+				img {
+
+					&.qodef--light {
+						opacity: 1 !important;
+						transition-delay: .35s;
+					}
+
+					&.qodef-beige,
+					&.qodef--dark,
+					&.qodef--orange {
+						opacity: 0 !important;
+					}
+				}
+			}
+		}
+	}
+}

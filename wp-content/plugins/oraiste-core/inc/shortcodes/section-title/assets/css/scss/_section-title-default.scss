@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Section Title shortcode styles
+   ========================================================================== */
+
+.qodef-section-title {
+	@include qodefRelativeLayout();
+
+	&.qodef-alignment {
+
+		&--center {
+			text-align: center;
+		}
+
+		&--left {
+			text-align: left;
+		}
+
+		&--right {
+			text-align: right;
+		}
+	}
+
+	.qodef-m {
+
+		&-title {
+			margin: 0;
+
+			.qodef-text-item {
+				display: inline-block;
+			}
+
+			.qodef--highlight {
+				position: relative;
+			}
+
+			svg {
+				@include qodefRippedSquareSvg();
+			}
+		}
+
+		&-text {
+			margin: 25px 0 0;
+		}
+	}
+
+	span.qodef-m-title {
+		@include qodefHeadingStyle();
+
+		font-size: 100px !important;
+		line-height: 1em;
+	}
+
+	&.qodef--has-appear {
+		@include qodefSkewAppearHidden(.1s);
+
+		&.qodef--appear {
+			@include qodefSkewAppearVisible();
+		}
+	}
+}
